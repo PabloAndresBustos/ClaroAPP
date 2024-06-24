@@ -1,0 +1,7 @@
+{
+  "name": "claro",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
