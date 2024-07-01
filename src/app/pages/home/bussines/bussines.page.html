@@ -1,0 +1,32 @@
+<ion-content class="content">
+  <strong>
+    <p class="ion-text-center" color="primary">{{page().toUpperCase()}}</p>
+  </strong>
+  @if (page() == 'personas') {
+    <app-cards 
+    [title]="'Portabilidad'"
+    [subtitle]="'DESDE 30% OFF x 12 MESES'"
+    [contentTitle]="'Dejanos tu número y te llamamos'"
+    [inputPlaceholder]="'Ej: 1126533009(sin 0 y sin 15)'"
+    [buttonText]="'Enviar'"
+    />
+  
+    <app-carrousel 
+    [imageList]="imageList"
+    />
+
+    <app-accordion 
+    [title]="'Información importante:'"
+    [subtitle]="'Conocé lo que podés hacer online'"
+    [buttonText]="'Más info'"
+    [accordionContentList]="accordionInfo"
+    />
+
+    <app-accordion 
+    [title]="'Preguntas frecuentes:'"
+    [subtitle]="''"
+    [buttonText]="''"
+    [accordionContentList]="accordionAnswer"
+    />
+  }
+</ion-content>
