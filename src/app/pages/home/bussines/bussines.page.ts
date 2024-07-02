@@ -1,4 +1,4 @@
-import { Component, OnInit, inject, signal } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ActivatedRoute } from '@angular/router';
 import { Accordion } from 'src/app/models/accordion.models';
@@ -35,8 +35,8 @@ export class BussinesPage implements OnInit {
   ]
 
   imageList:Images[] = [
-    {title: '¡ESTEMOS ALERTA!', url: '/assets/images/alerta.png', buttons: 'Conocé más'},
-    {title: '¡Vamos Checo!, GP Autria', url: '/assets/images/GPAustralia.jpg', buttons: 'Ver más'}
+    {title: '¡ESTEMOS ALERTA!', url: '/assets/images/alerta.png', buttons: 'Conocé más', class: 'carousel-item active'},
+    {title: '¡Vamos Checo!, GP Autria', url: '/assets/images/GPAustralia.jpg', buttons: 'Ver más', class: 'carousel-item'}
   ]
 
   constructor() { }

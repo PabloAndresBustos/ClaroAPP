@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, inject } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild, inject } from '@angular/core';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { Pages } from 'src/app/models/pages.models';
 import { Items } from 'src/app/models/items.models';
@@ -17,7 +17,22 @@ import { IonMenu } from '@ionic/angular/standalone';
 export class HomePage implements OnInit{
 
   viewService = inject(ViewService);
-  @ViewChild('menu') menu!:IonMenu;
+  
+  onWillOpen(){
+    this.viewService.buttonPosition.set('start')
+  }
+
+  onDidOpen(){
+    this.viewService.buttonPosition.set('start')
+  }
+
+  onWillClose(){
+    this.viewService.buttonPosition.set('end')
+  }
+
+  onDidClose(){
+    this.viewService.buttonPosition.set('end')
+  }
 
   buttonPosition(){
     return this.viewService.buttonPosition();
@@ -65,6 +80,6 @@ export class HomePage implements OnInit{
    ]
 
   ngOnInit() {
-
+    
   }
 }

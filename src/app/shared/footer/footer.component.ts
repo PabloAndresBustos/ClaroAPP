@@ -38,14 +38,6 @@ import { ViewService } from 'src/app/services/viewService.service';
 })
 export class FooterComponent  implements OnInit {
 
-  viewService = inject(ViewService);
-
-  @Input() element!:IonMenu;
-
-  menuStatus(){
-    return this.viewService.menuStatus(this.element);
-  }
-
   constructor() { }
 
   ngOnInit() {}
