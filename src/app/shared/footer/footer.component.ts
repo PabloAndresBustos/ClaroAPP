@@ -38,6 +38,12 @@ import { ViewService } from 'src/app/services/viewService.service';
 })
 export class FooterComponent  implements OnInit {
 
+  viewService = inject(ViewService);
+
+  openAlert(){
+    this.viewService.alertOpen.update(value => value = !value);
+  }
+
   constructor() { }
 
   ngOnInit() {}

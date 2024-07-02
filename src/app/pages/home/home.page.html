@@ -58,6 +58,13 @@
           />
         }
       </ion-content>
+      <ion-alert
+      [isOpen]="alertOpen()"
+      header="Testeo de APPS"
+      subHeader="Testeo de Alert APPS"
+      message="Teste con menssage para APPS"
+      >
+      </ion-alert>
       <ion-footer>
         <app-items 
         [items]="itemsFooter"

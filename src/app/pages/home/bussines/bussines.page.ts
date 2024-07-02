@@ -35,8 +35,22 @@ export class BussinesPage implements OnInit {
   ]
 
   imageList:Images[] = [
-    {title: '¡ESTEMOS ALERTA!', url: '/assets/images/alerta.png', buttons: 'Conocé más', class: 'carousel-item active', modalOpen: 'open-modal-estafas', modalContent: 'Estafas'},
-    {title: '¡Vamos Checo!, GP Autria', url: '/assets/images/GPAustralia.jpg', buttons: 'Ver más', class: 'carousel-item', modalOpen: 'open-modal-formula', modalContent: 'Formula 1'}
+    {
+      title: '¡ESTEMOS ALERTA!', 
+      url: '/assets/images/alerta.png', 
+      buttons: 'Conocé más', 
+      class: 'carousel-item active', 
+      modalOpen: 'open-modal-estafas', 
+      modalContent: 'Tus datos y contraseñas son personales, no las compartas con nadie por correo ni por teléfono. No abras enlaces de remitentes dudosos. Mantené tus datos de contacto actualizados para recibir alertas y avisos importantes. Sospechá de los llamados de urgencia que no te permitan tiempo para analizar y decidir. Tomate un tiempo antes de actuar, si recibís un mail de Claro, verificá que provenga de una casilla válida (@claro.com.ar o @email.claro.com.ar). Desde Claro nunca te llamaremos para solicitar tus claves, pin o códigos de acceso. Nuestros mensajes, promociones, concursos y ofertas se encuentran sólo en páginas oficiales de Claro, a las que se puede acceder desde: claro.com.ar Si recibís mensajes o llamadas publicitarias de terceros en tu teléfono móvil o fijo y no querés que suceda, registrate aquí y si ya lo hiciste e igualmente seguís recibiendo llamadas, allí mismo podés denunciarlo. Recordá que en las Redes Sociales hay perfiles falsos que buscan robar información. Nuestros perfiles oficiales están verificados (con tilde azul)Icono verificado'
+    },
+    {
+      title: '¡Vamos Checo!, GP Autria', 
+      url: '/assets/images/GPAustralia.jpg', 
+      buttons: 'Ver más', 
+      class: 'carousel-item', 
+      modalOpen: 'open-modal-formula', 
+      modalContent: ''
+    }
   ]
 
   constructor() { }

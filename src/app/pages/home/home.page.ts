@@ -4,7 +4,7 @@ import { Pages } from 'src/app/models/pages.models';
 import { Items } from 'src/app/models/items.models';
 import { ViewService } from 'src/app/services/viewService.service';
 import { Accordion } from 'src/app/models/accordion.models';
-import { IonMenu } from '@ionic/angular/standalone';
+import { IonMenu, IonAlert } from '@ionic/angular/standalone';
 
 
 @Component({
@@ -12,11 +12,15 @@ import { IonMenu } from '@ionic/angular/standalone';
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
   standalone: true,
-  imports: [SharedModule]
+  imports: [IonAlert, SharedModule]
 })
 export class HomePage implements OnInit{
 
   viewService = inject(ViewService);
+
+  alertOpen(){
+    return this.viewService.alertOpen();
+  }
   
   onWillOpen(){
     this.viewService.buttonPosition.set('start')
