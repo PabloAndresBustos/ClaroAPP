@@ -55,7 +55,7 @@ export class HomePage implements OnInit{
     {title: 'Contacto', url: '/contacto', icon: 'call-outline'}
   ]
 
-  itemsList:Items[] = [
+  itemsPeoples:Items[] = [
    {content: 'Planes para tu casa'},
    {content: 'Planes para tu celu'},
    {content: 'Packs de internet'},
@@ -64,20 +64,27 @@ export class HomePage implements OnInit{
    {content: 'Ayuda'} 
   ]
 
+  itemsBussinesServices:Items[] = [
+    {content: 'Planes para negocios'},
+    {content: 'Packs de internet'},
+    {content: 'Recargas'},
+    {content: 'Internet móvil'},
+    {content: 'Roaming'},
+    {content: 'Llamadas para WiFi'},
+    {content: 'Portabilidad'},
+    {content: 'Internet + telefonía'}, 
+  ]
+
+  itemsBussinesCloud:Items[] = [
+
+  ]
+
   itemsFooter:Items[] = [
     {content: 'Botón de baja'},
     {content: 'Portal de denuncias'}
    ]
 
-   movilidadList:Accordion[] = [
-    {title: 'Movilidad', content: 'Plan para negocios', url: ''},
-    {title: 'Movilidad', content: 'Plan para negocios', url: ''},
-    {title: 'Movilidad', content: 'Plan para negocios', url: ''},
-    {title: 'Movilidad', content: 'Plan para negocios', url: ''},
-    {title: 'Movilidad', content: 'Plan para negocios', url: ''},
-    {title: 'Movilidad', content: 'Plan para negocios', url: ''},
-    {title: 'Movilidad', content: 'Plan para negocios', url: ''},
-   ]
+
 
   ngOnInit() {
     

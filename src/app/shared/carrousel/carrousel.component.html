@@ -4,10 +4,15 @@
       <div [class]="image.class">
         <ion-card-title class="ion-text-center"> {{image.title}} </ion-card-title>
         <img [src]="image.url" class="d-block w-100" [alt]="image.title">
-        <ion-button expand="block" node="md" shape="round">
+        <ion-button expand="block" node="md" shape="round" [id]="image.modalOpen">
           {{image.buttons}}
         </ion-button>
       </div>
+      <app-modal 
+        [modalTrigger]="image.modalOpen"
+        [title]="image.title"
+        [content]="image.modalContent"
+      />
     }
   </div>
 </div>

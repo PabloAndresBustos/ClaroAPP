@@ -25,19 +25,36 @@
       >
       <ion-header>
         <ion-toolbar>
-          <ion-title>Servicios</ion-title>
+          @if(page() == 'personas'){
+            <ion-title>Servicios</ion-title>
+          }
+          @if(page() == 'negocios'){
+            <ion-title>Movilidad</ion-title>
+          }
         </ion-toolbar>
       </ion-header>
       <ion-content>
         @if (page() == 'personas') {
           <app-items
-          [items]="itemsList" 
+          [items]="itemsPeoples" 
           />
         }
 
         @if(page() == 'negocios'){
-          <app-accordion
-          [accordionContentList]="movilidadList"
+          <app-items 
+          [items]="itemsBussinesServices"
+          />
+          <ion-toolbar>
+            <ion-title>Claro Cloud</ion-title>
+          </ion-toolbar>
+          <app-items
+          [items]="itemsBussinesCloud" 
+          />
+        }
+
+        @if(page() == 'empresas'){
+          <app-items
+          [items]="itemsPeoples"
           />
         }
       </ion-content>

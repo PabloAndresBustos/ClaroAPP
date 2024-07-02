@@ -35,8 +35,8 @@ export class BussinesPage implements OnInit {
   ]
 
   imageList:Images[] = [
-    {title: '¡ESTEMOS ALERTA!', url: '/assets/images/alerta.png', buttons: 'Conocé más', class: 'carousel-item active'},
-    {title: '¡Vamos Checo!, GP Autria', url: '/assets/images/GPAustralia.jpg', buttons: 'Ver más', class: 'carousel-item'}
+    {title: '¡ESTEMOS ALERTA!', url: '/assets/images/alerta.png', buttons: 'Conocé más', class: 'carousel-item active', modalOpen: 'open-modal-estafas', modalContent: 'Estafas'},
+    {title: '¡Vamos Checo!, GP Autria', url: '/assets/images/GPAustralia.jpg', buttons: 'Ver más', class: 'carousel-item', modalOpen: 'open-modal-formula', modalContent: 'Formula 1'}
   ]
 
   constructor() { }

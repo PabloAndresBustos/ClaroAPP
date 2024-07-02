@@ -10,6 +10,7 @@ import { ItemsComponent } from './items/items.component';
 import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { IonToolbar, IonHeader, IonTitle, IonCard, IonFab, IonContent, IonFabButton, IonFabList, IonLabel, IonMenu, IonButton, IonItem, IonMenuToggle, IonRouterOutlet, IonFooter, IonIcon, IonToggle } from '@ionic/angular/standalone';
+import { ModalComponent } from './modal/modal.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { IonToolbar, IonHeader, IonTitle, IonCard, IonFab, IonContent, IonFabBut
   imports: [
     CommonModule,
     HeaderComponent,
+    ModalComponent,
     FooterComponent,
     CardsComponent,
     CartComponent,
@@ -48,6 +50,7 @@ import { IonToolbar, IonHeader, IonTitle, IonCard, IonFab, IonContent, IonFabBut
   exports:[
     CommonModule,
     HeaderComponent,
+    ModalComponent,
     FooterComponent,
     CardsComponent,
     CartComponent,
