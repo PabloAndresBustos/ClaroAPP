@@ -3,6 +3,7 @@ export interface Images{
     url: string,
     buttons: string,
     class: string,
+    modalSubTitle?: string,
     modalOpen?: string,
-    modalContent: string
+    modalContent?: string[]
 }

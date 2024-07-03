@@ -25,7 +25,10 @@ import { ModalComponent } from '../modal/modal.component';
 export class CarrouselComponent  implements OnInit {
 
   @Input() imageList!:Images[];
+  @Input() contentList?:string[];
   @Input() openModal!:string;
+  @Input() titleContent?:string;
+  @Input() subTitleContent?:string;
 
   constructor() { }
 
