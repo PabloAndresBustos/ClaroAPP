@@ -15,7 +15,8 @@
     [imageList]="imageList"
     />
 
-    <app-accordion 
+    <app-accordion
+    [isModal]="true" 
     [title]="'Información importante:'"
     [subtitle]="'Conocé lo que podés hacer online'"
     [buttonText]="'Más info'"
@@ -23,6 +24,7 @@
     />
 
     <app-accordion 
+    [isModal]="false"
     [title]="'Preguntas frecuentes:'"
     [subtitle]="''"
     [buttonText]="''"
