@@ -1,23 +1,27 @@
 <ion-modal [trigger]="modalTrigger">
   <ng-template>
     <ion-content class="ion-padding">
-      <ion-list>
-        <ion-list-header class="ion-align-items-center">
-          <ion-card class="ion-no-border">
-            <ion-card-header>
-              <ion-card-subtitle> {{titleContent}} </ion-card-subtitle>
-              <ion-card-title color="primary"> {{subTitleContent}} </ion-card-title>
-            </ion-card-header>
-          </ion-card>
-        </ion-list-header>
-        @if(contentList){
-          @for(item of contentList; track item){
-            <ul>
-              <ion-label>{{item}}</ion-label>
-            </ul>
+      @if(whithList){
+        <ion-list>
+          <ion-list-header class="ion-align-items-center">
+            <ion-card class="ion-no-border">
+              <ion-card-header>
+                <ion-card-subtitle> {{titleContent}} </ion-card-subtitle>
+                <ion-card-title color="primary"> {{subTitleContent}} </ion-card-title>
+              </ion-card-header>
+            </ion-card>
+          </ion-list-header>
+          @if(contentList){
+            @for(item of contentList; track item){
+              <ul>
+                <ion-label>{{item}}</ion-label>
+              </ul>
+            }
           }
-        }
-      </ion-list>
+        </ion-list>
+      }@else{
+        <ion-title> {{titleContent}} </ion-title>
+      }
     </ion-content>
     <ion-footer>
       <ion-toolbar color="primary">

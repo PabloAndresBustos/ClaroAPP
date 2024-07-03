@@ -8,7 +8,8 @@
           {{image.buttons}}
         </ion-button>
       </div>
-      <app-modal 
+      <app-modal
+        [whithList]="true"
         [modalTrigger]="image.modalOpen"
         [titleContent]="image.title"
         [subTitleContent]="image.modalSubTitle"

@@ -12,8 +12,8 @@ export class ModalComponent  implements OnInit {
 
   @ViewChild(IonModal) modal!:IonModal;
 
+  @Input() whithList!:boolean;
   @Input() modalTrigger?:string;
-  @Input() title!:string;
   @Input() titleContent?:string;
   @Input() subTitleContent?:string;
   @Input() contentList?:string[];
