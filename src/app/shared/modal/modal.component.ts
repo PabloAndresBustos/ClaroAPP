@@ -1,12 +1,32 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
-import { IonModal, IonHeader, IonContent, IonButton, IonToolbar, IonButtons, IonTitle, IonFooter, IonIcon, IonList, IonLabel, IonItem, IonListHeader, IonCardSubtitle, IonCardTitle, IonCardHeader, IonCard } from "@ionic/angular/standalone";
+import { IonModal, IonHeader, IonContent, IonButton, IonToolbar, IonButtons, IonTitle, IonFooter, IonIcon, IonList, IonLabel, IonItem, IonListHeader, IonCardSubtitle, IonCardTitle, IonCardHeader, IonCard, IonTabButton, IonTabBar, IonTabs, IonSegment, IonSegmentButton } from "@ionic/angular/standalone";
 
 @Component({
   selector: 'app-modal',
   standalone: true,
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.scss'],
-  imports: [IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonListHeader, IonItem, IonLabel, IonList, IonIcon, IonFooter, IonButtons, IonToolbar, IonButton, IonHeader, IonModal, IonTitle, IonContent]
+  imports: [IonTabButton, 
+    IonCard, 
+    IonCardHeader, 
+    IonCardTitle, 
+    IonCardSubtitle, 
+    IonListHeader, 
+    IonItem, 
+    IonLabel, 
+    IonList, 
+    IonIcon, 
+    IonFooter, 
+    IonButtons, 
+    IonToolbar, 
+    IonButton, 
+    IonHeader, 
+    IonModal, 
+    IonTitle, 
+    IonContent,
+    IonSegment,
+    IonSegmentButton
+  ]
 })
 export class ModalComponent  implements OnInit {
 

@@ -20,7 +20,17 @@
           }
         </ion-list>
       }@else{
-        <ion-title> {{titleContent}} </ion-title>
+        <ion-segment value="default">
+          <ion-segment-button value="default">
+            <ion-label>Servicios Móviles</ion-label>
+          </ion-segment-button >
+          <ion-segment-button value="second">
+            <ion-label>Servicios Hogar</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="third">
+            <ion-label>Débito Automático</ion-label>
+          </ion-segment-button>
+        </ion-segment>
       }
     </ion-content>
     <ion-footer>
