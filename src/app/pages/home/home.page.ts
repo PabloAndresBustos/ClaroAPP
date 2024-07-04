@@ -1,10 +1,9 @@
-import { AfterViewInit, Component, OnInit, ViewChild, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { Pages } from 'src/app/models/pages.models';
 import { Items } from 'src/app/models/items.models';
 import { ViewService } from 'src/app/services/viewService.service';
-import { Accordion } from 'src/app/models/accordion.models';
-import { IonMenu, IonAlert } from '@ionic/angular/standalone';
+import { IonAlert } from '@ionic/angular/standalone';
 
 
 @Component({

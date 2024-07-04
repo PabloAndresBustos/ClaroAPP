@@ -7,6 +7,7 @@ export class ViewService {
 
  headerIcon = signal<string>('person-outline');
  page = signal<string>('');
+ subPage = signal<string>('');
  buttonPosition = signal<string>('end');
  alertOpen = signal<boolean>(false);
  

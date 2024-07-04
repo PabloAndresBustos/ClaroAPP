@@ -1,7 +1,7 @@
 <ion-modal [trigger]="modalTrigger">
   <ng-template>
-    <ion-content class="ion-padding">
-      @if(whithList){
+    @if(whithList){
+      <ion-content class="ion-padding">
         <ion-list>
           <ion-list-header class="ion-align-items-center">
             <ion-card class="ion-no-border">
@@ -19,20 +19,23 @@
             }
           }
         </ion-list>
+      </ion-content> 
       }@else{
-        <ion-segment value="default">
-          <ion-segment-button value="default">
-            <ion-label>Servicios Móviles</ion-label>
-          </ion-segment-button >
-          <ion-segment-button value="second">
-            <ion-label>Servicios Hogar</ion-label>
+        <ion-segment value="default" node="md">
+          <ion-segment-button value="default" routerLink="moviles">
+            <ion-label>Móviles</ion-label>
           </ion-segment-button>
-          <ion-segment-button value="third">
+          <ion-segment-button value="second" routerLink="hogar">
+            <ion-label>Hogar</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="third" routerLink="debito">
             <ion-label>Débito Automático</ion-label>
           </ion-segment-button>
         </ion-segment>
+        <ion-content>
+          <ion-router-outlet></ion-router-outlet>
+        </ion-content>
       }
-    </ion-content>
     <ion-footer>
       <ion-toolbar color="primary">
         <ion-button expand="block" fill="clear" shape="round" (click)="cancel()">
