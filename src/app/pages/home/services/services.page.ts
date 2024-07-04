@@ -4,14 +4,14 @@ import { ActivatedRoute } from '@angular/router';
 import { ViewService } from 'src/app/services/viewService.service';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { Accordion } from 'src/app/models/accordion.models';
-
+import { IonList, IonListHeader } from "@ionic/angular/standalone";
 
 @Component({
   selector: 'app-services',
   templateUrl: './services.page.html',
   styleUrls: ['./services.page.scss'],
   standalone: true,
-  imports: [SharedModule]
+  imports: [IonListHeader, IonList, SharedModule]
 })
 export class ServicesPage implements OnInit {
 
@@ -37,6 +37,12 @@ export class ServicesPage implements OnInit {
 
   pagosPresencial: Accordion[] = [
     {title: 'Entidades de pago no bancarias', content: 'Instructivos'},
+  ]
+
+  serviciosHogar: Accordion[] = [
+    {title: 'Pagos por Claro Pay', content: 'Instructivos'},
+    {title: 'Medios de pago Claro (AMX Claro)', content: 'Instructivos'},
+    {title: 'Medios de pago Claro (Telmex)', content: 'Instructivos'},
   ]
    
   constructor() { }

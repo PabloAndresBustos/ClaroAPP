@@ -1,5 +1,5 @@
 <ion-content>
-    <h1> {{title()}} </h1>
+    <!-- <h1> {{title()}} </h1> -->
 @if (currentPage() == 'moviles') {
     <app-accordion 
     [title]="'Pagos Online'"
@@ -18,5 +18,36 @@
     [isModal]="false"
     [accordionContentList]="pagosPresencial"
     />
+}
+
+@if (currentPage() == 'hogar') {
+    <app-accordion 
+    [title]="'Servicios hogar'"
+    [isModal]="false"
+    [accordionContentList]="serviciosHogar"
+    />
+}
+
+@if(currentPage() == 'debito') {
+    <ion-list>
+        <ion-list-header>
+            <ion-label> Disponible con las principales tarjetas de crédito y con cuenta Bancaria </ion-label>
+        </ion-list-header>
+        <ul>
+            <li>Adherite con Tarjetas de Crédito en Mi Claro en la sección Pagar mi Factura, con un pago de cualquier monto y al finalizar el proceso de pago hace click en</li>
+            <li>Adherirme o llamando al *7246 o al 0-800-123-7246.</li>
+            <li>Adherite con Cuenta Bancaria (caja de ahorro o cuenta corriente) enviando un mail a clarocobranzas.claro.com.ar con asunto Alta débito automático y detallando en el correo el Nombre y Apellido del titular, el Número de Cuenta o de línea a adherir y adjuntando la constancia de CBU y CUIL del titular. También podés hacerlo en tu entidad bancaria o en nuestras sucursales. Búsca la más cercana a vos acá.</li>
+            <li>
+                <ion-list-header>
+                    <ion-label>Con la adhesión al débito automático:</ion-label>
+                </ion-list-header>
+                <ul>
+                    <li>Ahorras tiempo, evitando demoras y te olvidas de los vencimientos.</li>
+                    <li>Podés pagar a la fecha del resumen de la tarjeta y no al vencimiento de la factura.</li>
+                    <li>Es práctico, seguro y sin costo.</li>
+                </ul>
+            </li>
+        </ul>
+    </ion-list>
 }
 </ion-content>
