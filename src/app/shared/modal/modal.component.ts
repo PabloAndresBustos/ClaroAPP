@@ -1,8 +1,28 @@
-import { Component, inject, Input, OnInit, ViewChild } from '@angular/core';
-import { ActivatedRoute, RouterLink } from '@angular/router';
-import { IonModal, IonHeader, IonContent, IonButton, IonToolbar, IonButtons, IonTitle, IonFooter, IonIcon, IonList, IonLabel, IonItem, IonListHeader, IonCardSubtitle, IonCardTitle, IonCardHeader, IonCard, IonTabButton, IonTabBar, IonTabs, IonSegment, IonSegmentButton, IonRouterOutlet } from "@ionic/angular/standalone";
+import { RouterLink } from '@angular/router';
 import { Pages } from 'src/app/models/pages.models';
 import { ViewService } from 'src/app/services/viewService.service';
+import { Component, inject, Input, OnInit, ViewChild } from '@angular/core';
+import { 
+         IonModal, 
+         IonContent, 
+         IonButton, 
+         IonToolbar,
+         IonFooter, 
+         IonIcon, 
+         IonList, 
+         IonLabel, 
+         IonItem, 
+         IonListHeader, 
+         IonCardSubtitle, 
+         IonCardTitle, 
+         IonCardHeader, 
+         IonCard, 
+         IonTabButton, 
+         IonSegment, 
+         IonSegmentButton, 
+         IonRouterOutlet 
+        } from "@ionic/angular/standalone";
+
 
 @Component({
   selector: 'app-modal',
@@ -19,13 +39,10 @@ import { ViewService } from 'src/app/services/viewService.service';
     IonLabel, 
     IonList, 
     IonIcon, 
-    IonFooter, 
-    IonButtons, 
+    IonFooter,
     IonToolbar, 
-    IonButton, 
-    IonHeader, 
-    IonModal, 
-    IonTitle, 
+    IonButton,
+    IonModal,
     IonContent,
     IonSegment,
     IonSegmentButton,
@@ -43,6 +60,7 @@ export class ModalComponent  implements OnInit {
   @Input() titleContent?:string;
   @Input() subTitleContent?:string;
   @Input() contentList?:string[];
+  @Input() icon?:boolean = true;
 
   
   cancel(){

@@ -56,6 +56,7 @@ export class BussinesPage implements OnInit {
       class: 'carousel-item active', 
       modalOpen: 'open-modal-estafas',
       modalSubTitle: '¡Ante las estafas!',
+      modalIcon: true,
       modalContent: [
                      'Tus datos y contraseñas son personales, no las compartas con nadie por correo ni por teléfono.',
                      'No abras enlaces de remitentes dudosos.',
@@ -75,6 +76,7 @@ export class BussinesPage implements OnInit {
       class: 'carousel-item', 
       modalOpen: 'open-modal-formula',
       modalSubTitle: 'Gran Premio de Austria',
+      modalIcon: false,
       modalContent: ['Este contenido ya no se encuentra disponible.']
     }
   ]

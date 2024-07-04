@@ -14,7 +14,10 @@
           @if(contentList){
             @for(item of contentList; track item){
               <ul>
-                <ion-label>{{item}}</ion-label>
+                @if(icon){
+                  <ion-icon slot="start" name="checkmark-circle-outline"></ion-icon>
+                }
+                <ion-label> {{item}} </ion-label>
               </ul>
             }
           }

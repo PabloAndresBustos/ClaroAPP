@@ -5,5 +5,6 @@ export interface Images{
     class: string,
     modalSubTitle?: string,
     modalOpen?: string,
-    modalContent?: string[]
+    modalContent?: string[],
+    modalIcon?: boolean
 }

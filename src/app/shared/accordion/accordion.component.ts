@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, inject, Input, OnInit, ViewChild } from '@angular/core';
 import { IonContent, IonCardTitle, IonButton, IonCardSubtitle, IonAccordionGroup, IonAccordion, IonLabel, IonItem, IonModal, IonTitle, IonToolbar, IonFooter, IonIcon } from '@ionic/angular/standalone';
 import { Accordion } from 'src/app/models/accordion.models';
 import { ModalComponent } from '../modal/modal.component';
@@ -23,6 +23,7 @@ import { ModalComponent } from '../modal/modal.component';
 })
 export class AccordionComponent  implements OnInit {
 
+  
   @ViewChild(IonModal) modal!:IonModal;
 
   @Input() link!:string;
@@ -39,7 +40,6 @@ export class AccordionComponent  implements OnInit {
   cancel(){
     this.modal.dismiss();
   }
-
 
   constructor() { }
 
