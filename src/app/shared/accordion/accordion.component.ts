@@ -2,6 +2,7 @@ import { Component, inject, Input, OnInit, ViewChild } from '@angular/core';
 import { IonContent, IonCardTitle, IonButton, IonCardSubtitle, IonAccordionGroup, IonAccordion, IonLabel, IonItem, IonModal, IonTitle, IonToolbar, IonFooter, IonIcon } from '@ionic/angular/standalone';
 import { Accordion } from 'src/app/models/accordion.models';
 import { ModalComponent } from '../modal/modal.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-accordion',
@@ -18,7 +19,8 @@ import { ModalComponent } from '../modal/modal.component';
             IonCardTitle, 
             IonContent,
             IonModal,
-            ModalComponent
+            ModalComponent,
+            RouterLink
             ]
 })
 export class AccordionComponent  implements OnInit {
@@ -28,6 +30,7 @@ export class AccordionComponent  implements OnInit {
 
   @Input() link!:string;
   @Input() title!:string;
+  @Input() router?:string;
   @Input() subtitle!:string;
   @Input() buttonText!:string;
   @Input() color:string = 'ligth';
@@ -35,8 +38,7 @@ export class AccordionComponent  implements OnInit {
   @Input() titleColor:string = 'primary';
   @Input() accordionContentList!:Accordion[];
   
-
-
+  
   cancel(){
     this.modal.dismiss();
   }
