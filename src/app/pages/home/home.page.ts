@@ -1,9 +1,11 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject, signal } from '@angular/core';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { Pages } from 'src/app/models/pages.models';
 import { Items } from 'src/app/models/items.models';
 import { ViewService } from 'src/app/services/viewService.service';
 import { IonAlert } from '@ionic/angular/standalone';
+import { Router, RouterLink } from '@angular/router';
+import { withHttpTransferCacheOptions } from '@angular/platform-browser';
 
 
 @Component({
@@ -11,13 +13,20 @@ import { IonAlert } from '@ionic/angular/standalone';
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
   standalone: true,
-  imports: [IonAlert, SharedModule]
+  imports: [IonAlert, SharedModule, RouterLink]
 })
 export class HomePage implements OnInit{
 
   viewService = inject(ViewService);
+  router = inject(Router);
+  alertMessage:string = '';
 
   alertOpen(){
+    if(this.viewService.login()){
+      this.alertMessage = "App's disponibles en tu cuenta";
+    }else{
+      this.alertMessage = "Inicia sesion y disfruta las Apps";
+    }
     return this.viewService.alertOpen();
   }
   
@@ -48,6 +57,55 @@ export class HomePage implements OnInit{
   page(){
     return this.viewService.page();
   }
+
+  buttonAlert(){
+    if(this.viewService.login()){
+      return this.alertButtons;
+    }else{
+      return this.loginButton;
+    }
+  }
+
+  alertButtons = [
+    {
+      text: 'Mi Claro',
+      role: 'confirm',
+      handler: () => {
+        this.router.navigate(['mi-claro']);
+      },
+    },
+    {
+      text: 'Claro Video',
+      role: 'confirm',
+      handler: () => {
+        this.router.navigate(['claro-video']);
+      }
+    },
+    {
+      text: 'Claro Musica',
+      role: 'confirm',
+      handler: () => {
+        this.router.navigate(['claro-musica']);
+      }
+    },
+    {
+      text: 'Claro Tienda',
+      role: 'confirm',
+      handler: () => {
+        this.router.navigate(['claro-tienda']);
+      }
+    },
+  ]
+
+  loginButton = [
+    {
+      text: 'Iniciar sesion',
+      role: 'confirm',
+      handler: () => {
+        this.viewService.login.set(true);
+      }
+    }
+  ]
   
   constructor() { }
   
