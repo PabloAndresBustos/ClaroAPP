@@ -30,7 +30,8 @@ import {
         IonToggle, 
         IonAlert,
         IonList,
-        IonListHeader} from '@ionic/angular/standalone';
+        IonListHeader,
+        IonApp} from '@ionic/angular/standalone';
 
 
 
@@ -48,6 +49,8 @@ import {
     ItemsComponent,
     RouterLink,
     FormsModule,
+    IonApp,
+    IonRouterOutlet,
     IonList,
     IonListHeader,
     IonHeader,
@@ -83,6 +86,8 @@ import {
     ItemsComponent,
     RouterLink,
     FormsModule,
+    IonApp,
+    IonRouterOutlet,
     IonList,
     IonListHeader,
     IonHeader,
