@@ -2,7 +2,11 @@
   <ion-toolbar color="primary">
     <ion-button size="small" slot="start" fill="clear" color="light">
       <ion-icon [name]="getIconTitle()" node="md" class="login"></ion-icon>
-      Ingresar
+      @if (getTitle()) {
+        {{getTitle()}}
+      }@else {
+        Ingresar
+      }
     </ion-button>
     <ion-title class="ion-text-center">
       <span tacc="footer-claro-logo" width="68" height="26" viewbox="0 0 67 25"><span><svg

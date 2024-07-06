@@ -98,6 +98,14 @@ export class HomePage implements OnInit{
         this.router.navigate(['claro-tienda']);
       }
     },
+    {
+      text: 'Cerrar Sesión',
+      role: 'confirm',
+      handler: () => {
+        this.viewService.login.set(false);
+        this.viewService.userName.set('Ingresar');
+      }
+    },
   ]
 
   loginButton = [
@@ -116,6 +124,7 @@ export class HomePage implements OnInit{
       role: 'confirm',
       handler: () => {
         this.viewService.login.set(true);
+        this.viewService.userName.set('Test')
       }
     }
   ]

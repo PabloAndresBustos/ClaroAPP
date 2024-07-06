@@ -18,6 +18,10 @@ export class HeaderComponent  implements OnInit {
     return this.viewService.headerIcon();
   }
 
+  getTitle(){
+    return this.viewService.userName();
+  }
+
   constructor() { }
 
   ngOnInit() {}
