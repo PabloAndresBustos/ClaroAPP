@@ -104,6 +104,7 @@ export class HomePage implements OnInit{
       handler: () => {
         this.viewService.login.set(false);
         this.viewService.userName.set('Ingresar');
+        this.router.navigate(['/']);
       }
     },
   ]
