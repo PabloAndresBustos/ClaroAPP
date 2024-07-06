@@ -1,16 +1,37 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { HeaderComponent } from './header/header.component';
-import { CardsComponent } from './cards/cards.component';
-import { CartComponent } from './cart/cart.component';
-import { FooterComponent } from './footer/footer.component';
-import { AccordionComponent } from './accordion/accordion.component';
-import { CarrouselComponent } from './carrousel/carrousel.component';
-import { ItemsComponent } from './items/items.component';
 import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { IonToolbar, IonHeader, IonTitle, IonCard, IonFab, IonContent, IonFabButton, IonFabList, IonLabel, IonMenu, IonButton, IonItem, IonMenuToggle, IonRouterOutlet, IonFooter, IonIcon, IonToggle } from '@ionic/angular/standalone';
+import { CommonModule } from '@angular/common';
+import { CartComponent } from './cart/cart.component';
 import { ModalComponent } from './modal/modal.component';
+import { ItemsComponent } from './items/items.component';
+import { CardsComponent } from './cards/cards.component';
+import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
+import { AccordionComponent } from './accordion/accordion.component';
+import { CarrouselComponent } from './carrousel/carrousel.component';
+import { 
+        IonToolbar, 
+        IonHeader, 
+        IonTitle, 
+        IonCard, 
+        IonFab, 
+        IonContent, 
+        IonFabButton, 
+        IonFabList, 
+        IonLabel, 
+        IonMenu, 
+        IonButton, 
+        IonItem, 
+        IonMenuToggle, 
+        IonRouterOutlet, 
+        IonFooter, 
+        IonIcon, 
+        IonToggle, 
+        IonAlert,
+        IonList,
+        IonListHeader} from '@ionic/angular/standalone';
+
 
 
 @NgModule({
@@ -27,6 +48,8 @@ import { ModalComponent } from './modal/modal.component';
     ItemsComponent,
     RouterLink,
     FormsModule,
+    IonList,
+    IonListHeader,
     IonHeader,
     IonIcon,
     IonTitle,
@@ -45,7 +68,8 @@ import { ModalComponent } from './modal/modal.component';
     IonMenuToggle,
     IonFooter,
     IonRouterOutlet,
-    IonToggle
+    IonToggle,
+    IonAlert
   ],
   exports:[
     CommonModule,
@@ -59,6 +83,8 @@ import { ModalComponent } from './modal/modal.component';
     ItemsComponent,
     RouterLink,
     FormsModule,
+    IonList,
+    IonListHeader,
     IonHeader,
     IonIcon,
     IonTitle,
@@ -77,7 +103,8 @@ import { ModalComponent } from './modal/modal.component';
     IonMenuToggle,
     IonFooter,
     IonRouterOutlet,
-    IonToggle
+    IonToggle,
+    IonAlert
   ]
 })
 export class SharedModule { }

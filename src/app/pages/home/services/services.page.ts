@@ -1,17 +1,16 @@
-import { Component, inject, Input, OnInit, signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
-import { ViewService } from 'src/app/services/viewService.service';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { Accordion } from 'src/app/models/accordion.models';
-import { IonList, IonListHeader } from "@ionic/angular/standalone";
+import { Component, inject, OnInit, signal } from '@angular/core';
+import { ViewService } from 'src/app/services/viewService.service';
+
 
 @Component({
   selector: 'app-services',
   templateUrl: './services.page.html',
   styleUrls: ['./services.page.scss'],
   standalone: true,
-  imports: [IonListHeader, IonList, SharedModule]
+  imports: [SharedModule]
 })
 export class ServicesPage implements OnInit {
 

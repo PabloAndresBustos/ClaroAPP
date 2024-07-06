@@ -1,8 +1,8 @@
+import { ActivatedRoute } from '@angular/router';
+import { Images } from 'src/app/models/images.models';
 import { Component, OnInit, inject } from '@angular/core';
 import { SharedModule } from 'src/app/shared/shared.module';
-import { ActivatedRoute } from '@angular/router';
 import { Accordion } from 'src/app/models/accordion.models';
-import { Images } from 'src/app/models/images.models';
 import { ViewService } from 'src/app/services/viewService.service';
 
 @Component({

@@ -1,10 +1,10 @@
-import { Component, OnInit, inject } from '@angular/core';
-import { SharedModule } from 'src/app/shared/shared.module';
+import { Router } from '@angular/router';
 import { Pages } from 'src/app/models/pages.models';
 import { Items } from 'src/app/models/items.models';
+import { Component, OnInit, inject } from '@angular/core';
+import { SharedModule } from 'src/app/shared/shared.module';
 import { ViewService } from 'src/app/services/viewService.service';
-import { IonAlert } from '@ionic/angular/standalone';
-import { Router, RouterLink } from '@angular/router';
+
 
 
 @Component({
@@ -12,7 +12,7 @@ import { Router, RouterLink } from '@angular/router';
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
   standalone: true,
-  imports: [IonAlert, SharedModule, RouterLink]
+  imports: [SharedModule]
 })
 export class HomePage implements OnInit{
 
