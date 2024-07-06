@@ -10,6 +10,7 @@ export class ViewService {
  subPage = signal<string>('moviles');
  buttonPosition = signal<string>('end');
  alertOpen = signal<boolean>(false);
+ loginAlert = signal<boolean>(false);
  login = signal<boolean>(false);
  
  changeIconTitle(iconName:string){

@@ -28,6 +28,10 @@ export class HomePage implements OnInit{
     }
     return this.viewService.alertOpen();
   }
+
+  logginAlert(){
+    return this.viewService.loginAlert();
+  }
   
   onWillOpen(){
     this.viewService.buttonPosition.set('start')
@@ -97,6 +101,16 @@ export class HomePage implements OnInit{
   ]
 
   loginButton = [
+    {
+      text: 'Iniciar sesion',
+      role: 'confirm',
+      handler: () => {
+        this.viewService.loginAlert.update(value => value = !value);
+      }
+    }
+  ]
+
+  buttonLogin = [
     {
       text: 'Iniciar sesion',
       role: 'confirm',

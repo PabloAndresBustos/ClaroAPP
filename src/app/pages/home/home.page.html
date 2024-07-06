@@ -63,8 +63,13 @@
       header="Claro"
       [message]="alertMessage"
       [buttons]="buttonAlert()"
-      >
-      </ion-alert>
+      />
+      <ion-alert 
+      [isOpen]="logginAlert()"
+      header="Iniciar sesión"
+      [message]="'usuario: test | contraseña: test'"
+      [buttons]="buttonLogin"
+      />
       <ion-footer>
         <app-items 
         [items]="itemsFooter"
