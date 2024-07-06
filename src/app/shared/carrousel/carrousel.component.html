@@ -1,6 +1,6 @@
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
-    @for (image of imageList; track image) {
+    @for (image of imageList(); track image) {
       <div [class]="image.class">
         <ion-card-title class="ion-text-center"> {{image.title}} </ion-card-title>
         <img [src]="image.url" class="d-block w-100" [alt]="image.title">

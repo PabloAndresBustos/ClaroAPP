@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, input, OnInit } from '@angular/core';
 import { 
         IonCard, 
         IonContent, 
@@ -8,7 +8,8 @@ import {
         IonButton, 
         IonCardContent, 
         IonInput, 
-        IonTitle, IonLabel } from '@ionic/angular/standalone';
+        IonTitle,
+      } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-cards',
@@ -29,13 +30,12 @@ import {
 })
 export class CardsComponent  implements OnInit {
 
-  @Input() title!:string;
-  @Input() subtitle!:string;
-  @Input() contentTitle!:string;
-  @Input() inputPlaceholder!:string;
-  @Input() buttonText!:string;
-
-  @Input() showInput:boolean = false;
+  title = input.required<string>();
+  subtitle = input.required<string>();
+  contentTitle = input.required<string>();
+  inputPlaceholder = input.required<string>();
+  buttonText = input.required<string>();
+  showInput = input<boolean>(false);
   
 
   constructor() { }

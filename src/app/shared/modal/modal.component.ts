@@ -1,7 +1,7 @@
 import { RouterLink } from '@angular/router';
 import { Pages } from 'src/app/models/pages.models';
 import { ViewService } from 'src/app/services/viewService.service';
-import { Component, inject, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, inject, input, OnInit, ViewChild } from '@angular/core';
 import { 
          IonModal, 
          IonContent, 
@@ -55,12 +55,13 @@ export class ModalComponent  implements OnInit {
 
   @ViewChild(IonModal) modal!:IonModal;
 
-  @Input() whithList!:boolean;
-  @Input() modalTrigger?:string;
-  @Input() titleContent?:string;
-  @Input() subTitleContent?:string;
-  @Input() contentList?:string[];
-  @Input() icon?:boolean = true;
+  whithList = input.required<boolean>();
+  modalTrigger = input<string>()
+  titleContent = input<string>();
+  subTitleContent = input<string>();
+  contentList = input<string[]>();
+  icon = input<boolean>(true);
+
 
   
   cancel(){

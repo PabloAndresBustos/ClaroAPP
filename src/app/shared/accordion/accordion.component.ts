@@ -1,8 +1,24 @@
-import { Component, inject, Input, OnInit, ViewChild } from '@angular/core';
-import { IonContent, IonCardTitle, IonButton, IonCardSubtitle, IonAccordionGroup, IonAccordion, IonLabel, IonItem, IonModal, IonTitle, IonToolbar, IonFooter, IonIcon } from '@ionic/angular/standalone';
-import { Accordion } from 'src/app/models/accordion.models';
-import { ModalComponent } from '../modal/modal.component';
 import { RouterLink } from '@angular/router';
+import { ModalComponent } from '../modal/modal.component';
+import { Accordion } from 'src/app/models/accordion.models';
+import { Component, input, OnInit, ViewChild } from '@angular/core';
+import { 
+        IonContent, 
+        IonCardTitle, 
+        IonButton, 
+        IonCardSubtitle, 
+        IonAccordionGroup, 
+        IonAccordion, 
+        IonLabel, 
+        IonItem, 
+        IonModal, 
+        IonTitle, 
+        IonToolbar, 
+        IonFooter, 
+        IonIcon } from '@ionic/angular/standalone';
+
+
+
 
 @Component({
   selector: 'app-accordion',
@@ -28,15 +44,16 @@ export class AccordionComponent  implements OnInit {
   
   @ViewChild(IonModal) modal!:IonModal;
 
-  @Input() link!:string;
-  @Input() title!:string;
-  @Input() router?:string;
-  @Input() subtitle!:string;
-  @Input() buttonText!:string;
-  @Input() color:string = 'ligth';
-  @Input() isModal:boolean = false;
-  @Input() titleColor:string = 'primary';
-  @Input() accordionContentList!:Accordion[];
+  link = input<string>();
+  color = input<string>();
+  router = input<string>();
+  subtitle = input<string>();
+  buttonText = input<string>();
+  isModal = input<boolean>(false);
+  title = input.required<string>();
+  titleColor = input<string>('primary');
+  accordionContentList = input<Accordion[]>([]);
+  
   
   
   cancel(){

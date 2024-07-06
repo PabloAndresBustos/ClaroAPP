@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { IonItem, IonLabel, IonTitle } from '@ionic/angular/standalone';
 import { Items } from 'src/app/models/items.models';
+import { Component, input, OnInit } from '@angular/core';
+import { IonItem, IonLabel, IonTitle } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-items',
@@ -8,16 +8,15 @@ import { Items } from 'src/app/models/items.models';
   templateUrl: './items.component.html',
   styleUrls: ['./items.component.scss'],
   imports: [IonTitle, 
-    IonItem,
-    IonLabel
-  ]
+            IonItem,
+            IonLabel
+            ]
 })
 export class ItemsComponent  implements OnInit {
 
-  @Input() color:string = 'primary'
-  @Input() title!:string; 
-  @Input() items!:Items[];
-  
+  title = input<string>();
+  color = input<string>('primary');
+  items = input.required<Items[]>();
 
   constructor() { }
 

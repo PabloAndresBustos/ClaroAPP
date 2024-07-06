@@ -1,7 +1,17 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { IonCardTitle, IonButton, IonButtons, IonModal, IonInput, IonHeader, IonToolbar, IonContent, IonTitle, IonItem } from "@ionic/angular/standalone";
 import { Images } from 'src/app/models/images.models';
+import { Component, input, OnInit } from '@angular/core';
 import { ModalComponent } from '../modal/modal.component';
+import { 
+        IonCardTitle, 
+        IonButton, 
+        IonButtons, 
+        IonModal, 
+        IonInput, 
+        IonHeader, 
+        IonToolbar, 
+        IonContent, 
+        IonTitle, 
+        IonItem } from "@ionic/angular/standalone";
 
 @Component({
   selector: 'app-carrousel',
@@ -24,11 +34,11 @@ import { ModalComponent } from '../modal/modal.component';
 })
 export class CarrouselComponent  implements OnInit {
 
-  @Input() imageList!:Images[];
-  @Input() contentList?:string[];
-  @Input() openModal!:string;
-  @Input() titleContent?:string;
-  @Input() subTitleContent?:string;
+  openModal = input<string>();
+  titleContent = input<string>();
+  contentList = input<string[]>();
+  subTitleContent = input<string>();
+  imageList = input.required<Images[]>();
 
   constructor() { }
 

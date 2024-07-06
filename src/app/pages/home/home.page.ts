@@ -1,11 +1,10 @@
-import { Component, OnInit, inject, signal } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { Pages } from 'src/app/models/pages.models';
 import { Items } from 'src/app/models/items.models';
 import { ViewService } from 'src/app/services/viewService.service';
 import { IonAlert } from '@ionic/angular/standalone';
 import { Router, RouterLink } from '@angular/router';
-import { withHttpTransferCacheOptions } from '@angular/platform-browser';
 
 
 @Component({

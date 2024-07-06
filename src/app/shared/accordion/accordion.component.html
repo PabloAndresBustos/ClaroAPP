@@ -1,14 +1,14 @@
 <div class="content">
   <div class="title">
-    <ion-card-title> {{title}} </ion-card-title>
-    <ion-card-subtitle> {{subtitle}} </ion-card-subtitle>
+    <ion-card-title> {{title()}} </ion-card-title>
+    <ion-card-subtitle> {{subtitle()}} </ion-card-subtitle>
   </div>
   <div class="accordion">
     <ion-accordion-group>
-      @for (item of accordionContentList; track item) {
+      @for (item of accordionContentList(); track item) {
         <ion-accordion>
-          <ion-item slot="header" [color]="color" lines="none" detail>
-            <ion-label [color]="titleColor">
+          <ion-item slot="header" [color]="color()" lines="none" detail>
+            <ion-label [color]="titleColor()">
               {{item.title || item.url}}
             </ion-label>
           </ion-item>
@@ -17,11 +17,11 @@
       }
     </ion-accordion-group>
   </div>
-  <ion-button expand="block" fill="clear" shape="round" id="masInfo" [routerLink]="router">
-    {{buttonText}}
+  <ion-button expand="block" fill="clear" shape="round" id="masInfo" [routerLink]="router()">
+    {{buttonText()}}
   </ion-button>
 </div>
-  @if(isModal){
+  @if(isModal()){
   <app-modal 
     [whithList]="false"
     [modalTrigger]="'masInfo'"

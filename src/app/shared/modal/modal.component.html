@@ -1,20 +1,20 @@
-<ion-modal [trigger]="modalTrigger">
+<ion-modal [trigger]="modalTrigger()">
   <ng-template>
-    @if(whithList){
+    @if(whithList()){
       <ion-content class="ion-padding">
         <ion-list>
           <ion-list-header class="ion-align-items-center">
             <ion-card class="ion-no-border">
               <ion-card-header>
-                <ion-card-subtitle> {{titleContent}} </ion-card-subtitle>
-                <ion-card-title color="primary"> {{subTitleContent}} </ion-card-title>
+                <ion-card-subtitle> {{titleContent()}} </ion-card-subtitle>
+                <ion-card-title color="primary"> {{subTitleContent()}} </ion-card-title>
               </ion-card-header>
             </ion-card>
           </ion-list-header>
-          @if(contentList){
-            @for(item of contentList; track item){
+          @if(contentList()){
+            @for(item of contentList(); track item){
               <ul>
-                @if(icon){
+                @if(icon()){
                   <ion-icon slot="start" name="checkmark-circle-outline"></ion-icon>
                 }
                 <ion-label> {{item}} </ion-label>
