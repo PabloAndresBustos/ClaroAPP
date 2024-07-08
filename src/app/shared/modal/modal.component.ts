@@ -53,7 +53,7 @@ export class ModalComponent  implements OnInit {
   @ViewChild(IonModal) modal!:IonModal;
 
   viewService = inject(ViewService);
-  textButton = signal<string>('Iniciar sesión')
+  //textButton = signal<string>('Iniciar sesión')
   
   icon = input<boolean>(true);
   modalTrigger = input<string>();
@@ -73,16 +73,18 @@ export class ModalComponent  implements OnInit {
     this.modal.dismiss();
   }
 
-/*   buttonText(){
-    if(this.viewService.login()){
-      this.textButton.set('Cerrar sesión');
-    }else{
-      this.textButton.set('Iniciar sesión');
-    }
-  } */
-
   loginLogOut(){
     this.viewService.login.update(value => value = !value);
+  }
+
+  changeButton(){
+    let textButton = '';
+    if(this.login()){
+      textButton = 'Cerrar Sesión';
+    }else{
+      textButton = 'Iniciar Sesión';
+    }
+    return textButton;
   }
   
   changeTitle(title:string){
@@ -96,10 +98,10 @@ export class ModalComponent  implements OnInit {
   ]
 
   buttons:Pages[] = [
-    {title: 'Claro Música', url: 'claro-musica', icon: ''},
-    {title: 'Claro Video', url: 'claro-video', icon: ''},
-    {title: 'Tienda Claro', url: 'tienda-claro', icon: ''},
-    {title: 'Mi Claro', url: 'mi-claro', icon: ''}
+    {title: 'Mi Claro', url: 'mi-claro', icon: '/assets/logos/miclaro-logo.svg'},
+    {title: 'Claro Música', url: 'claro-musica', icon: '/assets/logos/claromusica-logo.svg'},
+    {title: 'Claro Video', url: 'claro-video', icon: '/assets/logos/clarovideo-logo.svg'},
+    {title: 'Tienda Claro', url: 'tienda-claro', icon: '/assets/logos/tienda-claro.png'}
   ]
 
   constructor() { }

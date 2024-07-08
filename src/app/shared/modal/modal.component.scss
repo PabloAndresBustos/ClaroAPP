@@ -36,3 +36,15 @@ ul{
 ion-segment{
     margin-top: 18px;
 }
+
+.buttons{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    ion-button{
+        img{
+            width: 116px;
+            height: 27px;
+        }
+    }
+}
