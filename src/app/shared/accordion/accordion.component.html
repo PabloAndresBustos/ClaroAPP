@@ -23,7 +23,10 @@
 </div>
   @if(isModal()){
   <app-modal 
+    [selectClass]="true"
     [whithList]="false"
+    [apps]="false"
+    [moreInfo]="true"
     [modalTrigger]="'masInfo'"
     [titleContent]="'Contenido de Mas Info'"
   />

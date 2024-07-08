@@ -1,5 +1,6 @@
-<ion-modal [trigger]="modalTrigger()">
+<ion-modal [trigger]="modalTrigger()" [class]="selectClass() ? 'normalModal' : 'littleModal'">
   <ng-template>
+
     @if(whithList()){
       <ion-content class="ion-padding">
         <ion-list>
@@ -23,28 +24,73 @@
           }
         </ion-list>
       </ion-content> 
-      }@else{
-        <ion-segment value="default" node="md">
-          <ion-segment-button value="default" routerLink="moviles">
-            <ion-label>Móviles</ion-label>
-          </ion-segment-button>
-          <ion-segment-button value="second" routerLink="hogar">
-            <ion-label>Hogar</ion-label>
-          </ion-segment-button>
-          <ion-segment-button value="third" routerLink="debito">
-            <ion-label>Débito Automático</ion-label>
-          </ion-segment-button>
-        </ion-segment>
-        <ion-content>
-          <ion-router-outlet></ion-router-outlet>
-        </ion-content>
       }
-    <ion-footer>
-      <ion-toolbar color="primary">
-        <ion-button expand="block" fill="clear" shape="round" (click)="cancel()">
-          <ion-icon name="close-circle-outline" color="light"></ion-icon>
-        </ion-button>
-      </ion-toolbar>
-    </ion-footer>
+      
+    @if(moreInfo()){
+      <ion-segment value="default" node="md">
+        <ion-segment-button value="default" routerLink="moviles">
+          <ion-label>Móviles</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="second" routerLink="hogar">
+          <ion-label>Hogar</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="third" routerLink="debito">
+          <ion-label>Débito Automático</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+      <ion-content>
+        <ion-router-outlet></ion-router-outlet>
+      </ion-content>
+    }
+
+    @if(apps()){
+      <ion-header>
+        <ion-toolbar color="primary">
+          <ion-title> {{subTitleContent()}} </ion-title>
+          <ion-button expand="block" fill="clear" shape="round" slot="end" (click)="cancel()">
+            <ion-icon name="close-circle-outline" color="light"></ion-icon>
+          </ion-button>
+        </ion-toolbar>
+      </ion-header>
+      @if (!login()) {
+        <ion-input
+        label="Usuario" 
+        label-placement="floating" 
+        fill="outline" 
+        placeholder="Ingresa usuario o número de linea"
+        value="Test"
+        class="ion-margin"
+        disabled="true"></ion-input>
+      <ion-input
+        label="Contraseña"
+        label-placement="floating" 
+        fill="outline" 
+        placeholder="Contraseña"
+        value="test"
+        class="ion-margin"
+        disabled="true"></ion-input>
+      }@else {
+        <div>
+          @for (button of buttons; track button) {
+            <ion-button expand="block" fill="solid" [routerLink]="button.url">
+              {{button.title}}
+            </ion-button>
+          }
+        </div>
+      }
+      <ion-button expand="block" fill="solid" (click)="loginLogOut()">
+        Iniciar Sesión
+      </ion-button>
+    }
+
+    @if(whithList() || moreInfo()){
+      <ion-footer>
+        <ion-toolbar color="primary">
+          <ion-button expand="block" fill="clear" shape="round" (click)="cancel()">
+            <ion-icon name="close-circle-outline" color="light"></ion-icon>
+          </ion-button>
+        </ion-toolbar>
+      </ion-footer>
+    }
   </ng-template>
 </ion-modal>

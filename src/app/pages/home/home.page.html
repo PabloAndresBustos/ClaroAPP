@@ -58,20 +58,6 @@
           />
         }
       </ion-content>
-      <ion-alert
-      [isOpen]="alertOpen()"
-      header="Claro"
-      [message]="alertMessage"
-      [buttons]="buttonAlert()"
-      node="ios"
-      />
-      <ion-alert 
-      [isOpen]="logginAlert()"
-      header="Iniciar sesión"
-      [message]="'usuario: Test | contraseña: test'"
-      [buttons]="buttonLogin"
-      node="ios"
-      />
       <ion-footer>
         <app-items 
         [items]="itemsFooter"
@@ -80,4 +66,14 @@
     </ion-menu>
     <ion-router-outlet id="menu-end" main></ion-router-outlet>
   </ion-content>
-<app-footer />
+<app-footer 
+[openModal]="'apps-modal'"
+/>
+<app-modal
+[subTitleContent]="'Inicia Sesión'" 
+[selectClass]="false"
+[moreInfo]="false"
+[whithList]="false"
+[apps]="true"
+[modalTrigger]="'apps-modal'"
+/>

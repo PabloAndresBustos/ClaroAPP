@@ -1,7 +1,7 @@
 import { RouterLink } from '@angular/router';
 import { Pages } from 'src/app/models/pages.models';
 import { ViewService } from 'src/app/services/viewService.service';
-import { Component, inject, input, OnInit, ViewChild } from '@angular/core';
+import { Component, inject, input, OnInit, signal, viewChild, ViewChild } from '@angular/core';
 import { 
          IonModal, 
          IonContent, 
@@ -20,8 +20,7 @@ import {
          IonTabButton, 
          IonSegment, 
          IonSegmentButton, 
-         IonRouterOutlet 
-        } from "@ionic/angular/standalone";
+         IonRouterOutlet, IonTitle, IonInput, IonHeader } from "@ionic/angular/standalone";
 
 
 @Component({
@@ -29,7 +28,7 @@ import {
   standalone: true,
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.scss'],
-  imports: [IonRouterOutlet, IonTabButton, 
+  imports: [IonHeader, IonInput, IonTitle, IonRouterOutlet, IonTabButton, 
     IonCard, 
     IonCardHeader, 
     IonCardTitle, 
@@ -51,23 +50,41 @@ import {
 })
 export class ModalComponent  implements OnInit {
 
-  viewService = inject(ViewService);
-
   @ViewChild(IonModal) modal!:IonModal;
 
-  whithList = input.required<boolean>();
-  modalTrigger = input<string>()
-  titleContent = input<string>();
-  subTitleContent = input<string>();
-  contentList = input<string[]>();
-  icon = input<boolean>(true);
-
-
+  viewService = inject(ViewService);
+  textButton = signal<string>('Iniciar sesión')
   
+  icon = input<boolean>(true);
+  modalTrigger = input<string>();
+  titleContent = input<string>();
+  contentList = input<string[]>();
+  apps = input.required<boolean>();
+  subTitleContent = input<string>();
+  moreInfo = input.required<boolean>();
+  whithList = input.required<boolean>();
+  selectClass = input.required<boolean>();
+  
+  login(){
+    return this.viewService.login();
+  }
+
   cancel(){
     this.modal.dismiss();
   }
 
+/*   buttonText(){
+    if(this.login()){
+      this.textButton.set('Cerrar sesión');
+    }else{
+      this.textButton.set('Iniciar sesión');
+    }
+  } */
+
+  loginLogOut(){
+    this.viewService.login.update(value => value = !value);
+  }
+  
   changeTitle(title:string){
     this.viewService.subPage.set(title);
   }
@@ -76,6 +93,13 @@ export class ModalComponent  implements OnInit {
     {title: 'Móviles', url: 'moviles', icon: ''},
     {title: 'Hogar', url: 'hogar', icon: ''},
     {title: 'Débito Automático', url: 'debito', icon: ''}
+  ]
+
+  buttons:Pages[] = [
+    {title: 'Claro Música', url: 'claro-musica', icon: ''},
+    {title: 'Claro Video', url: 'claro-video', icon: ''},
+    {title: 'Tienda Claro', url: 'tienda-claro', icon: ''},
+    {title: 'Mi Claro', url: 'mi-claro', icon: ''}
   ]
 
   constructor() { }

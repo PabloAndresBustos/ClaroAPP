@@ -19,20 +19,7 @@ export class HomePage implements OnInit{
   viewService = inject(ViewService);
   router = inject(Router);
   alertMessage:string = '';
-
-  alertOpen(){
-    if(this.viewService.login()){
-      this.alertMessage = "App's disponibles en tu cuenta";
-    }else{
-      this.alertMessage = "Inicia sesion y disfruta las Apps";
-    }
-    return this.viewService.alertOpen();
-  }
-
-  logginAlert(){
-    return this.viewService.loginAlert();
-  }
-  
+ 
   onWillOpen(){
     this.viewService.buttonPosition.set('start')
   }
@@ -60,75 +47,6 @@ export class HomePage implements OnInit{
   page(){
     return this.viewService.page();
   }
-
-  buttonAlert(){
-    if(this.viewService.login()){
-      return this.alertButtons;
-    }else{
-      return this.loginButton;
-    }
-  }
-
-  alertButtons = [
-    {
-      text: 'Mi Claro',
-      role: 'confirm',
-      handler: () => {
-        this.router.navigate(['mi-claro']);
-      },
-    },
-    {
-      text: 'Claro Video',
-      role: 'confirm',
-      handler: () => {
-        this.router.navigate(['claro-video']);
-      }
-    },
-    {
-      text: 'Claro Musica',
-      role: 'confirm',
-      handler: () => {
-        this.router.navigate(['claro-musica']);
-      }
-    },
-    {
-      text: 'Claro Tienda',
-      role: 'confirm',
-      handler: () => {
-        this.router.navigate(['claro-tienda']);
-      }
-    },
-    {
-      text: 'Cerrar Sesión',
-      role: 'confirm',
-      handler: () => {
-        this.viewService.login.set(false);
-        this.viewService.userName.set('Ingresar');
-        this.router.navigate(['/']);
-      }
-    },
-  ]
-
-  loginButton = [
-    {
-      text: 'Iniciar sesion',
-      role: 'confirm',
-      handler: () => {
-        this.viewService.loginAlert.update(value => value = !value);
-      }
-    }
-  ]
-
-  buttonLogin = [
-    {
-      text: 'Iniciar sesion',
-      role: 'confirm',
-      handler: () => {
-        this.viewService.login.set(true);
-        this.viewService.userName.set('Test')
-      }
-    }
-  ]
   
   constructor() { }
   

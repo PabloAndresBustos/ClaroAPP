@@ -9,7 +9,10 @@
         </ion-button>
       </div>
       <app-modal
+        [selectClass]="true"
         [whithList]="true"
+        [apps]="false"
+        [moreInfo]="false"
         [icon]="image.modalIcon" 
         [modalTrigger]="image.modalOpen"
         [titleContent]="image.title"

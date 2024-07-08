@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, inject} from '@angular/core';
+import { Component, Input, OnInit, inject, input} from '@angular/core';
 import { 
         IonButton, 
         IonFooter, 
@@ -15,6 +15,7 @@ import {
         IonMenuButton,
         IonMenu} from '@ionic/angular/standalone';
 import { ViewService } from 'src/app/services/viewService.service';
+import { ModalComponent } from '../modal/modal.component';
 
 
 @Component({
@@ -34,15 +35,14 @@ import { ViewService } from 'src/app/services/viewService.service';
             IonFab,
             IonFabList,
             IonFabButton,
-            IonMenuButton]
+            IonMenuButton,
+            ModalComponent
+          ]
 })
 export class FooterComponent  implements OnInit {
 
   viewService = inject(ViewService);
-
-  openAlert(){
-    this.viewService.alertOpen.update(value => value = !value);
-  }
+  openModal = input<string>();
 
   constructor() { }
 
