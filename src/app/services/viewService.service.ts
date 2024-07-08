@@ -13,6 +13,7 @@ export class ViewService {
  loginAlert = signal<boolean>(false);
  login = signal<boolean>(false);
  userName = signal<string>('');
+ logoUrl = signal<string>('');
  
  changeIconTitle(iconName:string){
   this.headerIcon.set(iconName);

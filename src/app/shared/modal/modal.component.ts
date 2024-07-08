@@ -1,4 +1,4 @@
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { Pages } from 'src/app/models/pages.models';
 import { ViewService } from 'src/app/services/viewService.service';
 import { Component, inject, input, OnInit, signal, viewChild, ViewChild } from '@angular/core';
@@ -53,6 +53,7 @@ export class ModalComponent  implements OnInit {
   @ViewChild(IonModal) modal!:IonModal;
 
   viewService = inject(ViewService);
+  router = inject(Router);
     
   icon = input<boolean>(true);
   modalTrigger = input<string>();
@@ -74,6 +75,9 @@ export class ModalComponent  implements OnInit {
 
   loginLogOut(){
     this.viewService.login.update(value => value = !value);
+    this.viewService.userName.set('Test');
+    this.viewService.logoUrl.set('/assets/logos/miclaro-logo.svg');
+    this.router.navigate(['mi-claro']);
   }
 
   changeButton(){

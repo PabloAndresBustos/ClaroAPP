@@ -22,6 +22,14 @@ export class HeaderComponent  implements OnInit {
     return this.viewService.userName();
   }
 
+  getLogin(){
+    return this.viewService.login();
+  }
+
+  logoUrl(){
+    return this.viewService.logoUrl();
+  }
+
   constructor() { }
 
   ngOnInit() {}
