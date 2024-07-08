@@ -53,8 +53,7 @@ export class ModalComponent  implements OnInit {
   @ViewChild(IonModal) modal!:IonModal;
 
   viewService = inject(ViewService);
-  //textButton = signal<string>('Iniciar sesión')
-  
+    
   icon = input<boolean>(true);
   modalTrigger = input<string>();
   titleContent = input<string>();

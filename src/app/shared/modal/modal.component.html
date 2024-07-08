@@ -70,9 +70,9 @@
         class="ion-margin"
         disabled="true"></ion-input>
       }@else {
-        <div class="buttons">
+        <div>
           @for (button of buttons; track button) {
-            <ion-button fill="solid" [routerLink]="button.url" (click)="cancel()" color="dark">
+            <ion-button expand="block" fill="solid" [routerLink]="button.url" (click)="cancel()" color="dark">
               <img [src]="button.icon">
             </ion-button>
           }
