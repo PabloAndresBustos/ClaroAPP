@@ -74,7 +74,7 @@ export class ModalComponent  implements OnInit {
   }
 
 /*   buttonText(){
-    if(this.login()){
+    if(this.viewService.login()){
       this.textButton.set('Cerrar sesión');
     }else{
       this.textButton.set('Iniciar sesión');
