@@ -1,7 +1,12 @@
 import { Router, RouterLink } from '@angular/router';
 import { Pages } from 'src/app/models/pages.models';
 import { ViewService } from 'src/app/services/viewService.service';
-import { Component, inject, input, OnInit, signal, viewChild, ViewChild } from '@angular/core';
+import { 
+        Component, 
+        inject, 
+        input, 
+        OnInit, 
+        ViewChild } from '@angular/core';
 import { 
          IonModal, 
          IonContent, 
@@ -20,7 +25,10 @@ import {
          IonTabButton, 
          IonSegment, 
          IonSegmentButton, 
-         IonRouterOutlet, IonTitle, IonInput, IonHeader } from "@ionic/angular/standalone";
+         IonRouterOutlet, 
+         IonTitle, 
+         IonInput, 
+         IonHeader } from "@ionic/angular/standalone";
 
 
 @Component({
@@ -28,25 +36,30 @@ import {
   standalone: true,
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.scss'],
-  imports: [IonHeader, IonInput, IonTitle, IonRouterOutlet, IonTabButton, 
-    IonCard, 
-    IonCardHeader, 
-    IonCardTitle, 
-    IonCardSubtitle, 
-    IonListHeader, 
-    IonItem, 
-    IonLabel, 
-    IonList, 
-    IonIcon, 
-    IonFooter,
-    IonToolbar, 
-    IonButton,
-    IonModal,
-    IonContent,
-    IonSegment,
-    IonSegmentButton,
-    RouterLink
-  ]
+  imports: [
+            IonHeader, 
+            IonInput, 
+            IonTitle, 
+            IonRouterOutlet, 
+            IonTabButton, 
+            IonCard, 
+            IonCardHeader, 
+            IonCardTitle, 
+            IonCardSubtitle, 
+            IonListHeader, 
+            IonItem, 
+            IonLabel, 
+            IonList, 
+            IonIcon, 
+            IonFooter,
+            IonToolbar, 
+            IonButton,
+            IonModal,
+            IonContent,
+            IonSegment,
+            IonSegmentButton,
+            RouterLink
+            ]
 })
 export class ModalComponent  implements OnInit {
 
@@ -76,8 +89,6 @@ export class ModalComponent  implements OnInit {
   loginLogOut(){
     this.viewService.login.update(value => value = !value);
     this.viewService.userName.set('Test');
-    this.viewService.logoUrl.set('/assets/logos/miclaro-logo.svg');
-    this.router.navigate(['mi-claro']);
   }
 
   changeButton(){

@@ -1,4 +1,14 @@
-<app-header />
+<app-header 
+  [modal]="'modal-login'"
+/>
+<app-modal
+[subTitleContent]="'Inicia Sesión'" 
+[selectClass]="false"
+[moreInfo]="false"
+[whithList]="false"
+[apps]="true"
+[modalTrigger]="'modal-login'"
+/>
   <ion-content class="content">
     <ion-fab slot="fixed" vertical="bottom" [horizontal]="buttonPosition()">
       <ion-fab-button>
@@ -6,7 +16,9 @@
       </ion-fab-button>
       <ion-fab-list side="top" class="fab-list">
         @for (page of pages; track page) {
-          <ion-label color="primary"> <strong>{{page.title}}</strong> </ion-label>
+          <ion-label color="primary"> 
+            <strong>{{page.title}}</strong> 
+          </ion-label>
           <ion-fab-button color="primary" [routerLink]='page.url' (click)="changeTitleIcon(page.icon)">
             <ion-icon [name]='page.icon' color="light"></ion-icon>
           </ion-fab-button>

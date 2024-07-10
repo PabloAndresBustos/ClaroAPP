@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject, input } from '@angular/core';
 import { IonTitle, IonToolbar, IonHeader, IonButton, IonIcon, IonList, IonItem, IonSelect, IonSelectOption, IonActionSheet, IonToggle, IonLabel } from '@ionic/angular/standalone';
 import { ViewService } from 'src/app/services/viewService.service';
 
@@ -13,6 +13,7 @@ import { ViewService } from 'src/app/services/viewService.service';
 export class HeaderComponent  implements OnInit {
 
   viewService = inject(ViewService);
+  modal = input<string>();
 
   getIconTitle(){
     return this.viewService.headerIcon();
