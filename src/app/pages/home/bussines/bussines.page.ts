@@ -114,7 +114,7 @@ export class BussinesPage implements OnInit {
       buttons: 'Experiencia Amarilla Gas',
       class: 'carousel-item active',
       modalIcon: false,
-      modalOpen: 'open-modal-telemetria',
+      modalOpen: 'open-telemetria-modal',
       modalSubTitle: 'Experiencia Amarilla Gas',
       modalContent: [
         'Solución que ofrece sensores en tanques u otros equipos, permitiendo el procesamiento y análisis estadístico de información relevante.',
@@ -145,7 +145,7 @@ export class BussinesPage implements OnInit {
       buttons: 'Experiencia Claro Argentina',
       class: 'carousel-item',
       modalIcon: false,
-      modalOpen: 'open-modal-redesgpon',
+      modalOpen: 'open-redesgpon-modal',
       modalSubTitle: 'Experiencia Claro Argentina',
       modalContent: [
         'Solución IoT de prevención de vandalismo sobre la red GPON, mediante sensores y conectividad NB-IoT, para evitar la pérdida del servicio a clientes.',
@@ -182,7 +182,7 @@ export class BussinesPage implements OnInit {
       buttons: 'Experiencia Silstech',
       class: 'carousel-item',
       modalIcon: false,
-      modalOpen: 'open-modal-logistica',
+      modalOpen: 'open-logistica-modal',
       modalSubTitle: 'Experiencia Silstech',
       modalContent: [
         'Comunicación M2M con altos niveles de seguridad para transmisión de video mobile en flotas de transporte.',
