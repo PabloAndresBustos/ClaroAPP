@@ -30,14 +30,17 @@ import {
 })
 export class CardsComponent  implements OnInit {
 
+  imageUrl = input<string>();
   title = input.required<string>();
-  subtitle = input.required<string>();
-  contentTitle = input.required<string>();
-  inputPlaceholder = input.required<string>();
-  buttonText = input.required<string>();
   showInput = input<boolean>(false);
+  withImage = input<boolean>(false);
+  inputPlaceholder = input<string>();
+  subtitle = input.required<string>();
+  buttonText = input.required<string>();
+  inputText = input.required<boolean>();
+  contentTitle = input.required<string>();
   
-
+  
   constructor() { }
 
   ngOnInit() {}

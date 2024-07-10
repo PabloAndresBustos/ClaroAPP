@@ -7,6 +7,7 @@
     [title]="'Portabilidad'"
     [subtitle]="'DESDE 30% OFF x 12 MESES'"
     [contentTitle]="'Dejanos tu número y te llamamos'"
+    [inputText]="true"
     [inputPlaceholder]="'Ej: 1126533009(sin 0 y sin 15)'"
     [buttonText]="'Enviar'"
     />
@@ -31,5 +32,27 @@
     [buttonText]="''"
     [accordionContentList]="accordionAnswer"
     />
+  }
+
+  @if(page() == 'negocios'){
+    <app-accordion 
+    [isModal]="false"
+    [title]="'NUESTROS PRODUCTOS'"
+    [accordionContentList]="bussinesAcordion"
+    />
+
+    <app-cards 
+    [title]="'Portabilidad'"
+    [subtitle]="'DESDE 40% OFF x 12 MESES'"
+    [inputText]="false"
+    [contentTitle]="'Cambiate a Claro para que tu negocio esté siempre comunicado'"
+    [buttonText]="'Cambiate'"
+    />
+
+    <app-carrousel 
+    [imageList]="imageBussines"
+    />
+
+
   }
 </ion-content>

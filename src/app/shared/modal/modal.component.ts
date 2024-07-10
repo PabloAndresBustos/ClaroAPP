@@ -112,10 +112,10 @@ export class ModalComponent  implements OnInit {
   ]
 
   buttons:Pages[] = [
-    {title: 'Mi Claro', url: 'mi-claro', icon: '/assets/logos/miclaro-logo.svg'},
-    {title: 'Claro Música', url: 'claro-musica', icon: '/assets/logos/claromusica-logo.svg'},
-    {title: 'Claro Video', url: 'claro-video', icon: '/assets/logos/clarovideo-logo.svg'},
-    {title: 'Tienda Claro', url: 'tienda-claro', icon: '/assets/logos/tienda-claro.png'}
+    {title: 'Mi Claro', url: '/mi-claro', icon: '/assets/logos/miclaro-logo.svg'},
+    {title: 'Claro Música', url: '/claro-musica', icon: '/assets/logos/claromusica-logo.svg'},
+    {title: 'Claro Video', url: '/claro-video', icon: '/assets/logos/clarovideo-logo.svg'},
+    {title: 'Tienda Claro', url: '/claro-tienda', icon: '/assets/logos/tienda-claro.png'}
   ]
 
   constructor() { }

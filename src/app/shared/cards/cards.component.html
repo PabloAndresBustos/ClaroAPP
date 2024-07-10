@@ -6,7 +6,12 @@
     </ion-card-header>
       <ion-card-content>
         <h2> {{contentTitle()}} </h2>
-        <ion-input [label]="inputPlaceholder()" label-placement="floating" fill="outline"></ion-input>
+        @if(inputText()){
+          <ion-input [label]="inputPlaceholder()" label-placement="floating" fill="outline"></ion-input>
+        }
+        @if(withImage()){
+          <img [src]="imageUrl()" alt="image">
+        }
         <ion-button expand="block" shape="round" color="primary">
           {{buttonText()}}
         </ion-button>
