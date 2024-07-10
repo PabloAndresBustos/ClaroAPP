@@ -9,7 +9,15 @@ import { SharedModule } from 'src/app/shared/shared.module';
   templateUrl: './claro-video.page.html',
   styleUrls: ['./claro-video.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, SharedModule]
+  imports: [
+            IonContent, 
+            IonHeader, 
+            IonTitle, 
+            IonToolbar, 
+            CommonModule, 
+            FormsModule, 
+            SharedModule
+            ]
 })
 export class ClaroVideoPage implements OnInit {
 
