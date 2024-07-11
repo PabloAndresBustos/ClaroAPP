@@ -113,9 +113,9 @@ export class BussinesPage implements OnInit {
       url: '/assets/images/amarillaGas.jpg',
       buttons: 'Experiencia Amarilla Gas',
       class: 'carousel-item active',
-      modalIcon: false,
       modalOpen: 'open-telemetria-modal',
       modalSubTitle: 'Experiencia Amarilla Gas',
+      modalIcon: false,
       modalContent: [
         'Solución que ofrece sensores en tanques u otros equipos, permitiendo el procesamiento y análisis estadístico de información relevante.',
         'Sitio web: www.amarillagas.com',
@@ -144,9 +144,9 @@ export class BussinesPage implements OnInit {
       url: '/assets/images/monitoreoGPON.jpg',
       buttons: 'Experiencia Claro Argentina',
       class: 'carousel-item',
-      modalIcon: false,
       modalOpen: 'open-redesgpon-modal',
       modalSubTitle: 'Experiencia Claro Argentina',
+      modalIcon: false,
       modalContent: [
         'Solución IoT de prevención de vandalismo sobre la red GPON, mediante sensores y conectividad NB-IoT, para evitar la pérdida del servicio a clientes.',
         'Sitio web: www.claro.com.ar',
@@ -211,6 +211,29 @@ export class BussinesPage implements OnInit {
         'Marcelo Jorge Moyano',
         'Dirección Ejecutiva',
       ]
+    }
+  ]
+
+  accordionBussinesAnswer: Accordion[] = [
+    {
+      title: '¿Qué servicios ofrece Claro para negocios?',
+      content: 'Claro ofrece una variedad de herramientas y recursos diseñados para mejorar la productividad y eficiencia empresarial. Esto incluye packs de internet adaptados a las necesidades de cada negocio, servicios de roaming para una conectividad global, soluciones IoT que permiten la automatización y optimización de procesos, y herramientas de gestion de actividades y monitoreo de activos para una operación más eficiente y transparente.'
+    },
+    {
+      title: '¿Qué es el IoT y para qué sirve?',
+      content: 'El internet en las cosas (IoT) es una red de dispositivos físicos conectados entre sí y a internet, capaces de recopilar y compartir datos. Su propósito principal es automatizar procesos, mejorar la eficiencia y crear experiencias más inteligentes para los usuarios.'
+    },
+    {
+      title: '¿Comó activar el roamming?',
+      content: 'Antes de viajar al extranjero y si planeas usar datos o internet en tu teléfono, es importante verificar que el servicio de roaming esté activo. Para hacerlo o activarlos, seguí estos pasos: En dispositivos iPhone: dirigite a Configuración o Ajustes, luego a Datos Celulares y seleccioná Opciones. Allí podrás activar el Roaming de Datos. En dispositivos Android: Accedé a Configuración o Ajustes, luego a Conexiones y Redes Móviles. Marcá la opción de Roaming o Itinerancia de Datos.' ,
+    },
+    {
+      title: '¿Qué es la portabilidad?',
+      content: 'La portabilidad  es el proceso que permite a los usuarios cambiar de operador de telefonía móvil sin necesidad de cambiar su número de teléfono. Es una opción que brinda libertad a los usuarios para elegir el proveedor de servicios que mejor se adapte a sus necesidades, sin perder su número de contacto. Al elegir Claro, tenés acceso a planes de internet diseñados para satisfacer las necesidades específicas de tu negocio'
+    },
+    {
+      title: '¿Comó hacer llamadas por Wi-Fi?',
+      content: 'Las llamadas de voz Wi-Fi  permiten hacer llamadas de voz desde Argentina o cualquier parte del mundo en la que te encuentres. Solo tenes que conectar tu smartphone a una red Wi-Fi y podés llamar a cualquier teléfono al precio de tu plan'
     }
   ]
 
