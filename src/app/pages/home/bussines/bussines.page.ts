@@ -74,6 +74,33 @@ export class BussinesPage implements OnInit {
     }
   ]
 
+  companyAcordion: Accordion[] = [
+    {
+      title: 'Planes',
+      content: 'Planes disponibles para que tu negocio este conectado al 100%'
+    },
+    {
+      title: 'Roaming',
+      content: 'Seguí conectado en tus viajes'
+    },
+    {
+      title: 'Cloud',
+      content: 'Traé tu flota a Claro y llevate desde 40% OFF x 12 meses en todos los planes'
+    },
+    {
+      title: 'IoT',
+      content: 'Con la plataforma Cisco Jasper Wireless, podes administrar, monitorear y tener un control total de tus líneas destinadas al intercambio de datos entre máquinas. Especialmente diseñada para negocios de seguimiento vehicular, logística, sistemas de pago, monitoreo, telemétrica y cuidados de salud entre otros.'
+    },
+    {
+      title: 'Internet Corporativo',
+      content: 'Acceso a Internet Dedicado y Simétrico, con garantías de calidad de servicio y el mejor asesoramiento para el diseño de la solución que su negocio necesita. El servicio se ofrece a través de backbone propio de fibra óptica y tecnología IP, permitiendo escalabilidad y máxima confiabilidad.'
+    },
+    {
+      title: 'SD-WAN',
+      content: 'Es una tecnología que permite construir redes de datos entre sus oficinas de manera ágil y simple, gracias a que separa los enlaces de transmisión de la configuración y gestión de la red. Permite definir políticas de routing, priorización, seguridad y gestión a nivel de las aplicaciones de su negocio.'
+    }
+  ]
+
   imageList: Images[] = [
     {
       title: '¡ESTEMOS ALERTA!',

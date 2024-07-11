@@ -32,31 +32,36 @@
     [buttonText]="''"
     [accordionContentList]="accordionAnswer"
     />
-  }
-
-  @if(page() == 'negocios'){
-    <app-accordion 
-    [isModal]="false"
-    [title]="'NUESTROS PRODUCTOS'"
-    [accordionContentList]="bussinesAcordion"
-    />
-
-    <app-cards 
-    [title]="'Portabilidad'"
-    [subtitle]="'DESDE 40% OFF x 12 MESES'"
-    [inputText]="false"
-    [contentTitle]="'Cambiate a Claro para que tu negocio esté siempre comunicado'"
-    [buttonText]="'Cambiate'"
-    />
-
-    <app-carrousel 
-    [imageList]="imageBussines"
-    />
-
-    <app-accordion 
-    [isModal]="false"
-    [title]="'Preguntas Frecuentes: '"
-    [accordionContentList]="accordionBussinesAnswer"
-    />
+  }@else {
+    @if(page() == 'negocios'){
+      <app-accordion 
+      [isModal]="false"
+      [title]="'NUESTROS PRODUCTOS'"
+      [accordionContentList]="bussinesAcordion"
+      />
+    }@else{
+      <app-accordion 
+      [isModal]="false"
+      [title]="'NUESTROS PRODUCTOS'"
+      [accordionContentList]="companyAcordion"
+      />
+    }
+      <app-cards 
+      [title]="'Portabilidad'"
+      [subtitle]="'DESDE 40% OFF x 12 MESES'"
+      [inputText]="false"
+      [contentTitle]="'Cambiate a Claro para que tu negocio esté siempre comunicado'"
+      [buttonText]="'Cambiate'"
+      />
+  
+      <app-carrousel 
+      [imageList]="imageBussines"
+      />
+  
+      <app-accordion 
+      [isModal]="false"
+      [title]="'Preguntas Frecuentes: '"
+      [accordionContentList]="accordionBussinesAnswer"
+      />
   }
 </ion-content>
