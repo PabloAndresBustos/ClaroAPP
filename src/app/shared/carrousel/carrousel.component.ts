@@ -1,6 +1,7 @@
 import { Images } from 'src/app/models/images.models';
-import { Component, input, OnInit } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, input, OnInit } from '@angular/core';
 import { ModalComponent } from '../modal/modal.component';
+import { register } from 'swiper/element/bundle';
 import { 
         IonCardTitle, 
         IonButton, 
@@ -13,9 +14,12 @@ import {
         IonTitle, 
         IonItem } from "@ionic/angular/standalone";
 
+register();
+
 @Component({
   selector: 'app-carrousel',
   standalone: true,
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './carrousel.component.html',
   styleUrls: ['./carrousel.component.scss'],
   imports: [

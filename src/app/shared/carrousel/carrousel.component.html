@@ -1,24 +1,22 @@
-<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    @for (image of imageList(); track image) {
-      <div [class]="image.class">
-        <ion-card-title class="ion-text-center"> {{image.title}} </ion-card-title>
-        <img [src]="image.url" class="d-block w-100" [alt]="image.title">
-        <ion-button expand="block" node="md" shape="round" [id]="image.modalOpen">
-          {{image.buttons}}
-        </ion-button>
-      </div>
-      <app-modal
-        [selectClass]="true"
-        [whithList]="true"
-        [apps]="false"
-        [moreInfo]="false"
-        [icon]="image.modalIcon" 
-        [modalTrigger]="image.modalOpen"
-        [titleContent]="image.title"
-        [subTitleContent]="image.modalSubTitle"
-        [contentList]="image.modalContent"
-      />
-    }
-  </div>
-</div>
+<swiper-container>
+  @for (image of imageList(); track image) {
+    <swiper-slide>
+      <ion-card-title class="ion-text-center"> {{image.title}} </ion-card-title>
+      <img [src]="image.url" class="d-block w-100" [alt]="image.title">
+      <ion-button expand="block" node="md" shape="round" [id]="image.modalOpen">
+        {{image.buttons}}
+      </ion-button>
+    </swiper-slide>
+    <app-modal
+    [selectClass]="true"
+    [whithList]="true"
+    [apps]="false"
+    [moreInfo]="false"
+    [icon]="image.modalIcon" 
+    [modalTrigger]="image.modalOpen"
+    [titleContent]="image.title"
+    [subTitleContent]="image.modalSubTitle"
+    [contentList]="image.modalContent"
+  />
+  }
+</swiper-container>
