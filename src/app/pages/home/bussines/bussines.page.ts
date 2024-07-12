@@ -1,6 +1,6 @@
 import { ActivatedRoute } from '@angular/router';
 import { Images } from 'src/app/models/images.models';
-import { CUSTOM_ELEMENTS_SCHEMA, Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { Accordion } from 'src/app/models/accordion.models';
 import { ViewService } from 'src/app/services/viewService.service';

@@ -74,11 +74,83 @@ export class HomePage implements OnInit{
     {content: 'Roaming'},
     {content: 'Llamadas para WiFi'},
     {content: 'Portabilidad'},
-    {content: 'Internet + telefonía'}, 
   ]
 
-  itemsBussinesCloud:Items[] = [
+  itemWebPresence:Items[] = [
+    {content: 'Internet + telefonía'}
+  ]
 
+  itemIot:Items[] = [
+    {content: 'M2M gestionado'},
+    {content: 'LTE-M y NB'},
+    {content: 'Claro IoT'},
+    {content: 'Monitoreo de Activos'},
+    {content: 'Gestión de Logística Claro'},
+    {content: 'Casos de éxito'}
+  ]
+
+  itemsInsfrasctucture:Items[] = [
+    {content: 'Claro Cloud Empresarial'},
+    {content: 'Nube Pública'},
+    {content: 'Presencia web'},
+    {content: 'Claro drive Negocio'},
+    {content: 'Correo empresas'},
+    {content: 'Google Workspace'},
+    {content: 'Claro backup'},
+    {content: 'Soluciones Knox'}, 
+    {content: 'Seguridad Empresas'},
+    {content: 'MDM Workspace ONE'}, 
+  ]
+
+  intensInternetCompany:Items[] = [
+    {content: 'Internet + telefonía'},
+    {content: 'Internet corporativo'}
+  ]
+
+  itemsMobilCompay:Items[] = [
+    {content: 'Planes para empresas'},
+    {content: 'Packs de internet'},
+    {content: 'Recargas'},
+    {content: 'Internet móvil'},
+    {content: 'Roaming'},
+    {content: 'Llamadas para WiFi'},
+    {content: 'Portabilidad'},
+  ]
+
+  itemsDataCompay:Items[] = [
+    {content: 'Red privada virtual multiservicios'},
+    {content: 'LAN y WAN administrada'},
+    {content: 'LAN to WAN'},
+    {content: 'SD WAN'},
+  ]
+
+  itemsSecurityCompay:Items[] = [
+    {content: 'Seguridad administrada'},
+    {content: 'Video vigilacia IP'},
+    {content: 'Seguridad avanzada en Data Center'},
+    {content: 'MDM'},
+  ]
+
+  itemsVoiceCompay:Items[] = [
+    {content: 'Tramas de telefonía'},
+    {content: 'Red inteligente (0800-0810)'},
+    {content: 'Central gerenciada IP'},
+  ]
+
+  itemsDataCenterCompay:Items[] = [
+    {content: 'Servicos administrados de Data Center'},
+    {content: 'Insfraestructura de Data Center'},
+    {content: 'Almacenamiento de respaldo de información'},
+    {content: 'Hosting dedicado'}
+  ]
+
+  itemsIotCompay:Items[] = [
+    {content: 'M2M gestionado'},
+    {content: 'LTE-M y NB'},
+    {content: 'Claro IoT'},
+    {content: 'Monitoreo de Activos'},
+    {content: 'Gestión de Logística Claro'},
+    {content: 'Casos de éxito'}
   ]
 
   itemsFooter:Items[] = [

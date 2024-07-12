@@ -35,46 +35,95 @@
       (ionDidOpen)="onDidOpen()"
       (ionDidClose)="onDidClose()"
       >
-      <ion-header>
-        <ion-toolbar>
-          @if(page() == 'personas'){
-            <ion-title>Servicios</ion-title>
-          }
-          @if(page() == 'negocios'){
-            <ion-title>Movilidad</ion-title>
-          }
-        </ion-toolbar>
-      </ion-header>
       <ion-content>
         @if (page() == 'personas') {
+          <ion-toolbar>
+            <ion-title>Servicios</ion-title>
+          </ion-toolbar>
           <app-items
           [items]="itemsPeoples" 
           />
         }
 
         @if(page() == 'negocios'){
+          <ion-toolbar>
+            <ion-title>Movilidad</ion-title>
+          </ion-toolbar>
           <app-items 
           [items]="itemsBussinesServices"
           />
           <ion-toolbar>
-            <ion-title>Claro Cloud</ion-title>
+            <ion-title>Infraestructura</ion-title>
           </ion-toolbar>
           <app-items
-          [items]="itemsBussinesCloud" 
+          [items]="itemsInsfrasctucture" 
+          />
+          <ion-toolbar>
+            <ion-title>Presencia web</ion-title>
+          </ion-toolbar>
+          <app-items
+          [items]="itemWebPresence" 
+          />
+          <ion-toolbar>
+            <ion-title>IoT</ion-title>
+          </ion-toolbar>
+          <app-items
+          [items]="itemIot" 
           />
         }
 
         @if(page() == 'empresas'){
+          <ion-toolbar>
+            <ion-title>Internet</ion-title>
+          </ion-toolbar>
           <app-items
-          [items]="itemsPeoples"
+          [items]="intensInternetCompany"
+          />
+          <ion-toolbar>
+            <ion-title>Movilidad</ion-title>
+          </ion-toolbar>
+          <app-items
+          [items]="itemsMobilCompay"
+          />
+          <ion-toolbar>
+            <ion-title>Datos</ion-title>
+          </ion-toolbar>
+          <app-items
+          [items]="itemsDataCompay"
+          />
+          <ion-toolbar>
+            <ion-title>Seguridad</ion-title>
+          </ion-toolbar>
+          <app-items
+          [items]="itemsSecurityCompay"
+          />
+          <ion-toolbar>
+            <ion-title>Voz</ion-title>
+          </ion-toolbar>
+          <app-items
+          [items]="itemsVoiceCompay"
+          />
+          <ion-toolbar>
+            <ion-title>Data Center</ion-title>
+          </ion-toolbar>
+          <app-items
+          [items]="itemsDataCenterCompay"
+          />
+          <ion-toolbar>
+            <ion-title>IOT</ion-title>
+          </ion-toolbar>
+          <app-items
+          [items]="itemsIotCompay"
           />
         }
-      </ion-content>
-      <ion-footer>
+
+        <ion-toolbar>
+          <ion-title>Adicionales</ion-title>
+        </ion-toolbar>
         <app-items 
         [items]="itemsFooter"
         />
-      </ion-footer>
+      </ion-content>
     </ion-menu>
     <ion-router-outlet id="menu-end" main></ion-router-outlet>
   </ion-content>

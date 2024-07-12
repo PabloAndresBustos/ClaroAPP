@@ -1,6 +1,6 @@
 <ion-title> {{title()}} </ion-title>
 @for (item of items(); track item){
-  <ion-item [color]="color()" lines="none">
+  <ion-item [color]="color()" lines="none" detail="true">
     <ion-label> {{item.content}} </ion-label>
   </ion-item>
 }
