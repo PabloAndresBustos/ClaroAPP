@@ -1,4 +1,10 @@
-<swiper-container>
+<swiper-container
+loop="true"
+autoplay="true"
+speed="1000"
+effect="coverflow"
+grab-cursor="true"
+>
   @for (image of imageList(); track image) {
     <swiper-slide>
       <ion-card-title class="ion-text-center"> {{image.title}} </ion-card-title>
