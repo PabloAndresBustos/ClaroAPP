@@ -58,7 +58,7 @@ export class HomePage implements OnInit{
   ]
 
   itemsPeoples:Items[] = [
-   {content: 'Planes para tu casa', url: 'planes-para-tu-casa'},
+   {content: 'Planes para tu casa'},
    {content: 'Planes para tu celu'},
    {content: 'Packs de internet'},
    {content: 'Contenidos'},
