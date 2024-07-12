@@ -1,7 +1,6 @@
 import { Images } from 'src/app/models/images.models';
-import { Component, CUSTOM_ELEMENTS_SCHEMA, input, OnInit, signal, viewChild } from '@angular/core';
 import { ModalComponent } from '../modal/modal.component';
-//import { Swiper, SwiperOptions } from 'swiper/types';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, input, OnInit } from '@angular/core';
 import { 
         IonCardTitle, 
         IonButton, 
@@ -13,7 +12,6 @@ import {
         IonContent, 
         IonTitle, 
         IonItem } from "@ionic/angular/standalone";
-import { SwiperContainer } from 'swiper/element';
 
 @Component({
   selector: 'app-carrousel',
@@ -37,9 +35,6 @@ import { SwiperContainer } from 'swiper/element';
 })
 export class CarrouselComponent  implements OnInit {
 
-  //swiper = signal<SwiperContainer | null>(null);
-  //swiperElementContainer = viewChild<SwiperContainer>('swpier')
-
   openModal = input<string>();
   titleContent = input<string>();
   contentList = input<string[]>();
@@ -49,21 +44,6 @@ export class CarrouselComponent  implements OnInit {
   constructor() { }
 
   ngOnInit() {
- /*    const swiperElementContainer = document.querySelector('swiper-container');
-    const swiperOptions:SwiperOptions = {
-      loop: true,
-      fadeEffect: {
-        crossFade: true,
-      },
-      navigation: {
-        enabled: true,
-      },
-      autoplay: {
-        delay: 2000
-      }
-    }
-    Object.assign(swiperElementContainer!, swiperOptions)
-    this.swiper.set(swiperElementContainer); */
   }
 
 }

@@ -53,11 +53,17 @@
       [contentTitle]="'Cambiate a Claro para que tu negocio esté siempre comunicado'"
       [buttonText]="'Cambiate'"
       />
-  
+
+    @if (page() == 'negocios') {
       <app-carrousel 
       [imageList]="imageBussines"
       />
-  
+    }@else {
+      <app-carrousel 
+      [imageList]="imageCompany"
+      />
+    }
+ 
       <app-accordion 
       [isModal]="false"
       [title]="'Preguntas Frecuentes: '"
