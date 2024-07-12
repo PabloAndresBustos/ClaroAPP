@@ -14,6 +14,7 @@
   
     <app-carrousel 
     [imageList]="imageList"
+    [effect]="'coverflow'"
     />
 
     <app-accordion
@@ -57,10 +58,12 @@
     @if (page() == 'negocios') {
       <app-carrousel 
       [imageList]="imageBussines"
+      [effect]="'coverflow'"
       />
     }@else {
       <app-carrousel 
       [imageList]="imageCompany"
+      [effect]="'coverflow'"
       />
     }
  

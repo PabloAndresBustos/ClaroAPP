@@ -38,5 +38,9 @@ export const routes: Routes = [
     path: 'claro-musica',
     loadComponent: () => import('./pages/claro-musica/claro-musica.page').then( m => m.ClaroMusicaPage)
   },
+  {
+    path: 'claro-pay',
+    loadComponent: () => import('./pages/claro-pay/claro-pay.page').then( m => m.ClaroPayPage)
+  },
 
 ];

@@ -1,3 +1,4 @@
+import { RouterLink } from '@angular/router';
 import { Items } from 'src/app/models/items.models';
 import { Component, input, OnInit } from '@angular/core';
 import { IonItem, IonLabel, IonTitle } from '@ionic/angular/standalone';
@@ -9,7 +10,8 @@ import { IonItem, IonLabel, IonTitle } from '@ionic/angular/standalone';
   styleUrls: ['./items.component.scss'],
   imports: [IonTitle, 
             IonItem,
-            IonLabel
+            IonLabel,
+            RouterLink
             ]
 })
 export class ItemsComponent  implements OnInit {
@@ -17,7 +19,7 @@ export class ItemsComponent  implements OnInit {
   title = input<string>();
   color = input<string>('primary');
   items = input.required<Items[]>();
-
+  
   constructor() { }
 
   ngOnInit() {}

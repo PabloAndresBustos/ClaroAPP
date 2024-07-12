@@ -40,6 +40,7 @@ export class CarrouselComponent  implements OnInit {
   contentList = input<string[]>();
   subTitleContent = input<string>();
   imageList = input.required<Images[]>();
+  effect = input.required<string>();
 
   constructor() { }
 

@@ -115,6 +115,7 @@ export class ModalComponent  implements OnInit {
     {title: 'Mi Claro', url: '/mi-claro', icon: '/assets/logos/miclaro-logo.svg'},
     {title: 'Claro Música', url: '/claro-musica', icon: '/assets/logos/claromusica-logo.svg'},
     {title: 'Claro Video', url: '/claro-video', icon: '/assets/logos/clarovideo-logo.svg'},
+    {title: 'Claro Pay', url: '/claro-pay', icon: '/assets/logos/claro-pay.png'},
     {title: 'Tienda Claro', url: '/claro-tienda', icon: '/assets/logos/tienda-claro.png'}
   ]
 

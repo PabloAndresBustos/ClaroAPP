@@ -1,6 +1,6 @@
 <ion-title> {{title()}} </ion-title>
 @for (item of items(); track item){
-  <ion-item [color]="color()" lines="none" detail="true">
+  <ion-item [color]="color()" lines="none" detail="true" [routerLink]="item.url">
     <ion-label> {{item.content}} </ion-label>
   </ion-item>
 }
