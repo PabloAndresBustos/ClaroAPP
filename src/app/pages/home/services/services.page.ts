@@ -24,9 +24,23 @@ export class ServicesPage implements OnInit {
 
   pagosOnline:Accordion[] = [
     {title: 'Pagos desde Mi Claro', 
-     content: 'Sin consumir tus datos, pagá tus facturas en Mi Claro con tus tarjetas de crédito o con Visa Débito. Pasos a seguir: 1. Iniciá sesión en Mi Claro y elegí la opción "Pagar mi Factura". 2. Conocé el importe a pagar y hace clic en “Continuar”. 3. Ingresá el monto a paga y hace clic en “Continuar”. 4. Ingresá los datos de tu tarjeta. 5. Confirmá el pago y ¡listo!'},
+     content: 'Sin consumir us datos, pagá tus facturas en Mi Claro con tus tarjetas de crédito o con Visa Débito. Pasos a seguir:',
+     list: [
+      'Iniciá sesión en Mi Claro y elegí la opción "Pagar mi Factura".',
+      'Conocé el importe a pagar y hace clic en “Continuar”.',
+      'Ingresá el monto a paga y hace clic en “Continuar”.',
+      'Ingresá los datos de tu tarjeta. 5. Confirmá el pago y ¡listo!',
+     ]
+    },
     {title: 'Pagos por Claro Pay', 
-     content: 'Pagá tu factura al instante desde Claro Pay sin consumir tus datos y con beneficios todos los meses. Podes elegir pagar con Dinero en Cuenta o con tus tarjetas de debito o crédito. Entrá ahora en Claro Pay  y empezá a disfrutar tus beneficios. 1. Ingresá a la opción Pagá tu factura Claro. 2. Seleccioná el medio de pago con el que quierés pagar. 3. Presioná Confirmar. 4. Y listo!'},
+     content: 'Pagá tu factura al instante desde Claro Pay sin consumir tus datos y con beneficios todos los meses. Podes elegir pagar con Dinero en Cuenta o con tus tarjetas de debito o crédito. Entrá ahora en Claro Pay  y empezá a disfrutar tus beneficios.',
+     list: [
+      'Ingresá a la opción Pagá tu factura Claro.',
+      'Seleccioná el medio de pago con el que quierés pagar.',
+      'Presioná Confirmar.',
+      'Y listo!'
+     ]
+    },
     {title: 'Pagos por PagosMisCuentas.com', content: 'Instructivos'},
     {title: 'Pagos por Pagos Link', content: 'Instructivos'}
   ]

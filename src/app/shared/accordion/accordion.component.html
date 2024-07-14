@@ -12,7 +12,16 @@
               {{item.title || item.url}}
             </ion-label>
           </ion-item>
-          <div class="ion-padding" slot="content">{{item.content}}</div>
+          <div class="ion-padding" slot="content">
+            {{item.content}}
+            @if (item.list) {
+              @for (element of item.list; track element) {
+                <ul>
+                  <li>{{element}}</li>
+                </ul>
+              }
+            }
+          </div>
         </ion-accordion>
       }
     </ion-accordion-group>

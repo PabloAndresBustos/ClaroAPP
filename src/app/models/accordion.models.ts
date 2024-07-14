@@ -1,5 +1,6 @@
 export interface Accordion{
-    title:string;
-    content?:string;
-    url?: string;
+    title:string,
+    content?:string,
+    url?: string,
+    list?: string[]
 }
