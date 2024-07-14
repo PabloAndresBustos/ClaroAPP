@@ -15,8 +15,8 @@
           <div class="ion-padding" slot="content">
             {{item.content}}
             @if (item.list) {
+              <h3>{{item.titleList}}</h3>
               @for (element of item.list; track element) {
-                <h3>{{item.titleList}}</h3>
                 <ul>
                   <li>{{element}}</li>
                 </ul>
