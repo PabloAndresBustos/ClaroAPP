@@ -16,6 +16,7 @@
             {{item.content}}
             @if (item.list) {
               @for (element of item.list; track element) {
+                <h3>{{item.titleList}}</h3>
                 <ul>
                   <li>{{element}}</li>
                 </ul>
