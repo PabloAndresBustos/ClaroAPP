@@ -39,11 +39,24 @@ export class BussinesPage implements OnInit {
     },
     {
       title: '¿Cómo consultar saldo?',
-      content: 'Podés consultar tu saldo Claro de la siguiente manera: A través de Mi Claro: - Ingresá a Mi Claro con tu email y contraseña. - Hacé click en la sección "Mi Consumo" para ver tu saldo y el detalle de tus consumos. Vía SMS: - Enviá un SMS gratuito al 611 con la palabra "SALDO". - Recibirás un mensaje de respuesta con el saldo actual de tu línea.'
+      content: 'Podés consultar tu saldo Claro de la siguiente manera: A través de Mi Claro: ',
+      list: [
+        'Ingresá a Mi Claro con tu email y contraseña.',
+        'Hacé click en la sección "Mi Consumo" para ver tu saldo y el detalle de tus consumos.',
+        'Vía SMS: Enviá un SMS gratuito al 611 con la palabra "SALDO".',
+        'Recibirás un mensaje de respuesta con el saldo actual de tu línea.'
+      ]
     },
     {
       title: '¿Cómo activar un chip?',
-      content: 'Si tu línea ya está activa pero pediste un nuevo chip, podés activarlo ingresando a Mi Claro  y seleccionando “Mi Chip” en el menú. Si pediste una nueva línea o número de Claro, tu chip ya estará activo. Si hiciste una portabilidad y recibiste el chip, necesitás esperar unos días a que se complete el proceso. Si tu chip no funciona, ingresá a Mi Claro y seleccioná la opción "Chatear con nosotros" para verificar el estado. En caso de que tu línea esté suspendida por robo o pérdida, podés activarla ingresando a Mi Claro, opción "Chatear con nosotros" o llamando al *611. Si la línea suspendida es corporativa, llamá al *677. Para líneas prepagas, es necesario registrar el chip a tu nombre de acuerdo con la Resolución 8507 sancionada por el Ente Nacional de Comunicaciones (ENACOM). Para más información ingresá acá.'
+      list: [
+        'Si tu línea ya está activa pero pediste un nuevo chip, podés activarlo ingresando a Mi Claro  y seleccionando “Mi Chip” en el menú.',
+        'Si pediste una nueva línea o número de Claro, tu chip ya estará activo.',
+        'Si hiciste una portabilidad y recibiste el chip, necesitás esperar unos días a que se complete el proceso.',
+        'Si tu chip no funciona, ingresá a Mi Claro y seleccioná la opción "Chatear con nosotros" para verificar el estado.',
+        'En caso de que tu línea esté suspendida por robo o pérdida, podés activarla ingresando a Mi Claro, opción "Chatear con nosotros" o llamando al *611.',
+        'Si la línea suspendida es corporativa, llamá al *677. Para líneas prepagas, es necesario registrar el chip a tu nombre de acuerdo con la Resolución 8507 sancionada por el Ente Nacional de Comunicaciones (ENACOM). Para más información ingresá acá.'
+      ]
     },
     {
       title: '¿Qué es prepago?',
@@ -359,7 +372,12 @@ export class BussinesPage implements OnInit {
     },
     {
       title: '¿Comó activar el roamming?',
-      content: 'Antes de viajar al extranjero y si planeas usar datos o internet en tu teléfono, es importante verificar que el servicio de roaming esté activo. Para hacerlo o activarlos, seguí estos pasos: En dispositivos iPhone: dirigite a Configuración o Ajustes, luego a Datos Celulares y seleccioná Opciones. Allí podrás activar el Roaming de Datos. En dispositivos Android: Accedé a Configuración o Ajustes, luego a Conexiones y Redes Móviles. Marcá la opción de Roaming o Itinerancia de Datos.' ,
+      content: 'Antes de viajar al extranjero y si planeas usar datos o internet en tu teléfono, es importante verificar que el servicio de roaming esté activo. Para hacerlo o activarlos,',
+      titleList: 'Seguí estos pasos: ',
+      list: [
+        'En dispositivos iPhone: dirigite a Configuración o Ajustes, luego a Datos Celulares y seleccioná Opciones. Allí podrás activar el Roaming de Datos.',
+        'En dispositivos Android: Accedé a Configuración o Ajustes, luego a Conexiones y Redes Móviles. Marcá la opción de Roaming o Itinerancia de Datos.'
+      ]
     },
     {
       title: '¿Qué es la portabilidad?',

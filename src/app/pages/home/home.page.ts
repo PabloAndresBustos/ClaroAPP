@@ -54,7 +54,7 @@ export class HomePage implements OnInit{
     {title: 'Empresas', url: 'empresas', icon: 'business-outline'},
     {title: 'Negocios', url: 'negocios', icon: 'bag-handle-outline'},
     {title: 'Personas', url: 'personas', icon: 'person-outline'},
-    {title: 'Contacto', url: '/contacto', icon: 'call-outline'}
+    /* {title: 'Contacto', url: '/contacto', icon: 'call-outline'} */
   ]
 
   itemsPeoples:Items[] = [
