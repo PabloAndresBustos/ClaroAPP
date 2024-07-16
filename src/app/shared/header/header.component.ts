@@ -1,6 +1,7 @@
 import { Component, OnInit, inject, input } from '@angular/core';
 import { IonTitle, IonToolbar, IonHeader, IonButton, IonIcon, IonList, IonItem, IonSelect, IonSelectOption, IonActionSheet, IonToggle, IonLabel } from '@ionic/angular/standalone';
 import { ViewService } from 'src/app/services/viewService.service';
+import { FormsModule } from '@angular/forms';
 
 
 @Component({
@@ -8,7 +9,7 @@ import { ViewService } from 'src/app/services/viewService.service';
   standalone: true,
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
-  imports: [IonToggle, IonActionSheet, IonIcon, IonButton, IonHeader, IonTitle, IonToolbar, IonHeader, IonList, IonItem, IonSelect, IonSelectOption, IonLabel]
+  imports: [IonToggle, IonActionSheet, IonIcon, IonButton, IonHeader, IonTitle, IonToolbar, IonHeader, IonList, IonItem, IonSelect, IonSelectOption, IonLabel, FormsModule]
 })
 export class HeaderComponent  implements OnInit {
 

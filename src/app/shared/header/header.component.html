@@ -31,7 +31,8 @@
         node="md" 
         color="ligth" 
         class="ion-padding"
-        
+        [(ngModel)]="viewService.selectedTheme"
+        (ionChange)="viewService.toggleChange($event)"
         />
       <ion-icon slot="end" name="moon"></ion-icon>
     </div>
