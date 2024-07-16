@@ -57,7 +57,7 @@ export class HomePage implements OnInit{
     {title: 'Contacto', url: '/contacto', icon: 'call-outline'}
   ]
 
-  itemsPeoples:Items[] = [
+  itemsPeoples:Accordion[] = [
    {content: 'Planes para tu casa'},
    {content: 'Planes para tu celu'},
    {content: 'Packs de internet'},
@@ -66,21 +66,7 @@ export class HomePage implements OnInit{
    {content: 'Ayuda'} 
   ]
 
-  accordionPeoples:Accordion[] = [
-    {title: 'Servicios',
-     content: 'Planes para tu casa',
-     list: [
-      'Planes para tu casa',
-      'Planes para tu celu',
-      'Packs de internet',
-      'Contenidos',
-      'Roaming para tu viaje',
-      'Ayuda' 
-     ]
-    }
-  ]
-
-  itemsBussinesServices:Items[] = [
+  itemsBussinesServices:Accordion[] = [
     {content: 'Planes para negocios'},
     {content: 'Packs de internet'},
     {content: 'Recargas'},
@@ -90,11 +76,11 @@ export class HomePage implements OnInit{
     {content: 'Portabilidad'},
   ]
 
-  itemWebPresence:Items[] = [
+  itemWebPresence:Accordion[] = [
     {content: 'Internet + telefonía'}
   ]
 
-  itemIot:Items[] = [
+  itemIot:Accordion[] = [
     {content: 'M2M gestionado'},
     {content: 'LTE-M y NB'},
     {content: 'Claro IoT'},
@@ -103,7 +89,7 @@ export class HomePage implements OnInit{
     {content: 'Casos de éxito'}
   ]
 
-  itemsInsfrasctucture:Items[] = [
+  itemsInsfrasctucture:Accordion[] = [
     {content: 'Claro Cloud Empresarial'},
     {content: 'Nube Pública'},
     {content: 'Presencia web'},
@@ -116,12 +102,12 @@ export class HomePage implements OnInit{
     {content: 'MDM Workspace ONE'}, 
   ]
 
-  intensInternetCompany:Items[] = [
+  intensInternetCompany:Accordion[] = [
     {content: 'Internet + telefonía'},
     {content: 'Internet corporativo'}
   ]
 
-  itemsMobilCompay:Items[] = [
+  itemsMobilCompay:Accordion[] = [
     {content: 'Planes para empresas'},
     {content: 'Packs de internet'},
     {content: 'Recargas'},
@@ -131,34 +117,34 @@ export class HomePage implements OnInit{
     {content: 'Portabilidad'},
   ]
 
-  itemsDataCompay:Items[] = [
+  itemsDataCompay:Accordion[] = [
     {content: 'Red privada virtual multiservicios'},
     {content: 'LAN y WAN administrada'},
     {content: 'LAN to WAN'},
     {content: 'SD WAN'},
   ]
 
-  itemsSecurityCompay:Items[] = [
+  itemsSecurityCompay:Accordion[] = [
     {content: 'Seguridad administrada'},
     {content: 'Video vigilacia IP'},
     {content: 'Seguridad avanzada en Data Center'},
     {content: 'MDM'},
   ]
 
-  itemsVoiceCompay:Items[] = [
+  itemsVoiceCompay:Accordion[] = [
     {content: 'Tramas de telefonía'},
     {content: 'Red inteligente (0800-0810)'},
     {content: 'Central gerenciada IP'},
   ]
 
-  itemsDataCenterCompay:Items[] = [
+  itemsDataCenterCompay:Accordion[] = [
     {content: 'Servicos administrados de Data Center'},
     {content: 'Insfraestructura de Data Center'},
     {content: 'Almacenamiento de respaldo de información'},
     {content: 'Hosting dedicado'}
   ]
 
-  itemsIotCompay:Items[] = [
+  itemsIotCompay:Accordion[] = [
     {content: 'M2M gestionado'},
     {content: 'LTE-M y NB'},
     {content: 'Claro IoT'},
@@ -167,7 +153,7 @@ export class HomePage implements OnInit{
     {content: 'Casos de éxito'}
   ]
 
-  itemsFooter:Items[] = [
+  itemsFooter:Accordion[] = [
     {content: 'Botón de baja'},
     {content: 'Portal de denuncias'}
    ]

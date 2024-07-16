@@ -1,31 +1,52 @@
 <div class="content">
-  <div class="title">
-    <ion-card-title> {{title()}} </ion-card-title>
-    <ion-card-subtitle> {{subtitle()}} </ion-card-subtitle>
-  </div>
+  @if (!whithList()) {
+    <div class="title">
+      <ion-card-title> {{title()}} </ion-card-title>
+      <ion-card-subtitle> {{subtitle()}} </ion-card-subtitle>
+    </div>
+  }
   <div class="accordion">
-    <ion-accordion-group>
-      @for (item of accordionContentList(); track item) {
-        <ion-accordion>
-          <ion-item slot="header" [color]="color()" lines="none" detail>
-            <ion-label [color]="titleColor()">
-              {{item.title || item.url}}
-            </ion-label>
-          </ion-item>
-          <div class="ion-padding" slot="content">
-            {{item.content}}
-            @if (item.list) {
-              <h4>{{item.titleList}}</h4>
-                <ul style="list-style: none;">
-              @for (element of item.list; track element) {
-                  <li>{{element}}</li>
-              }
-                </ul>
-            }
-          </div>
-        </ion-accordion>
-      }
+    @if(whithList()){
+      <ion-accordion-group>
+          <ion-accordion>
+            <ion-item slot="header" color="primary" detail>
+              <ion-toolbar color="primary">
+                <ion-title>{{title()}}</ion-title>
+              </ion-toolbar>
+            </ion-item>
+          @for (item of accordionContentList(); track item) {    
+            <div slot="content">
+              <ion-item lines="none" [routerLink]="item.url" detail>
+                <ion-label>{{item.content}}</ion-label>
+              </ion-item>
+            </div>
+          }
+          </ion-accordion>
     </ion-accordion-group>
+    }@else{
+      <ion-accordion-group>
+        @for (item of accordionContentList(); track item) {
+          <ion-accordion>
+            <ion-item slot="header" [color]="color()" lines="none" detail>
+              <ion-label [color]="titleColor()">
+                {{item.title || item.url}}
+              </ion-label>
+            </ion-item>
+            <div class="ion-padding" slot="content">
+              {{item.content}}
+              @if (item.list) {
+                <h4>{{item.titleList}}</h4>
+                  <ul style="list-style: none;">
+                @for (element of item.list; track element) {
+                    <li>{{element}}</li>
+                }
+                  </ul>
+              }
+            </div>
+          </ion-accordion>
+        }
+      </ion-accordion-group>
+    }
   </div>
   @if (buttonText()) {
     <ion-button expand="block" fill="clear" shape="round" id="masInfo" [routerLink]="router()">

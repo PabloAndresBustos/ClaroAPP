@@ -1,7 +1,7 @@
 import { Items } from "./items.models"
 
 export interface Accordion{
-    title:string,
+    title?:string,
     content?:string,
     url?: string,
     titleList?:string,

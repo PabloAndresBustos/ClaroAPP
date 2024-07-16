@@ -37,91 +37,88 @@
       >
       <ion-content>
         @if (page() == 'personas') {
-          <ion-toolbar>
-            <ion-title>Servicios</ion-title>
-          </ion-toolbar>
-          <app-items
-          [items]="itemsPeoples" 
+          <app-accordion
+          title="Servicios"
+          [whithList]="true"
+          [accordionContentList]="itemsPeoples"
           />
         }
 
         @if(page() == 'negocios'){
-          <ion-toolbar>
-            <ion-title>Movilidad</ion-title>
-          </ion-toolbar>
-          <app-items 
-          [items]="itemsBussinesServices"
+          <app-accordion
+          title="Movilidad"
+          [whithList]="true" 
+          [accordionContentList]="itemsBussinesServices"
           />
-          <ion-toolbar>
-            <ion-title>Infraestructura</ion-title>
-          </ion-toolbar>
-          <app-items
-          [items]="itemsInsfrasctucture" 
+
+          <app-accordion
+          title="Infraestructura"
+          [whithList]="true"
+          [accordionContentList]="itemsInsfrasctucture" 
           />
-          <ion-toolbar>
-            <ion-title>Presencia web</ion-title>
-          </ion-toolbar>
-          <app-items
-          [items]="itemWebPresence" 
+
+          <app-accordion
+          title="Presencia web"
+          [whithList]="true"
+          [accordionContentList]="itemWebPresence" 
           />
-          <ion-toolbar>
-            <ion-title>IoT</ion-title>
-          </ion-toolbar>
-          <app-items
-          [items]="itemIot" 
+
+          <app-accordion
+          title="IoT"
+          [whithList]="true"
+          [accordionContentList]="itemIot" 
           />
         }
 
         @if(page() == 'empresas'){
-          <ion-toolbar>
-            <ion-title>Internet</ion-title>
-          </ion-toolbar>
-          <app-items
-          [items]="intensInternetCompany"
+
+          <app-accordion
+          title="Internet"
+          [whithList]="true"
+          [accordionContentList]="intensInternetCompany"
           />
-          <ion-toolbar>
-            <ion-title>Movilidad</ion-title>
-          </ion-toolbar>
-          <app-items
-          [items]="itemsMobilCompay"
+
+          <app-accordion
+          title="Movilidad"
+          [whithList]="true"
+          [accordionContentList]="itemsMobilCompay"
           />
-          <ion-toolbar>
-            <ion-title>Datos</ion-title>
-          </ion-toolbar>
-          <app-items
-          [items]="itemsDataCompay"
+
+          <app-accordion
+          title="Datos"
+          [whithList]="true"
+          [accordionContentList]="itemsDataCompay"
           />
-          <ion-toolbar>
-            <ion-title>Seguridad</ion-title>
-          </ion-toolbar>
-          <app-items
-          [items]="itemsSecurityCompay"
+
+          <app-accordion
+          title="Seguridad"
+          [whithList]="true"
+          [accordionContentList]="itemsSecurityCompay"
           />
-          <ion-toolbar>
-            <ion-title>Voz</ion-title>
-          </ion-toolbar>
-          <app-items
-          [items]="itemsVoiceCompay"
+
+          <app-accordion
+          title="Voz"
+          [whithList]="true"
+          [accordionContentList]="itemsVoiceCompay"
           />
-          <ion-toolbar>
-            <ion-title>Data Center</ion-title>
-          </ion-toolbar>
-          <app-items
-          [items]="itemsDataCenterCompay"
+
+          <app-accordion
+          title="Data Center"
+          [whithList]="true"
+          [accordionContentList]="itemsDataCenterCompay"
           />
-          <ion-toolbar>
-            <ion-title>IOT</ion-title>
-          </ion-toolbar>
-          <app-items
-          [items]="itemsIotCompay"
+
+          <app-accordion
+          title="IoT"
+          [whithList]="true"
+          [accordionContentList]="itemsIotCompay"
           />
         }
 
-        <ion-toolbar>
-          <ion-title>Adicionales</ion-title>
-        </ion-toolbar>
-        <app-items 
-        [items]="itemsFooter"
+        <app-accordion
+        title="Adicionales"
+        [whithList]="true" 
+        [accordionContentList]="itemsFooter"
         />
       </ion-content>
     </ion-menu>

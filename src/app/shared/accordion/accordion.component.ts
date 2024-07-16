@@ -51,11 +51,12 @@ export class AccordionComponent  implements OnInit {
 
   link = input<string>();
   color = input<string>();
+  title = input<string>();
   router = input<string>();
+  whithList = input<boolean>();
   subtitle = input<string>();
   buttonText = input<string>();
   isModal = input<boolean>(false);
-  title = input.required<string>();
   titleColor = input<string>('primary');
   accordionContentList = input<Accordion[]>();
     
