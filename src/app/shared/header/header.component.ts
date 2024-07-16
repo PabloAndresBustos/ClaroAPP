@@ -27,9 +27,9 @@ export class HeaderComponent  implements OnInit {
     return this.viewService.login();
   }
 
-  logoUrl(){
+  /*logoUrl(){
     return this.viewService.logoUrl();
-  }
+  }*/
 
   constructor() { }
 
