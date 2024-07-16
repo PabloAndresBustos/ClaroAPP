@@ -16,28 +16,33 @@ import {
         IonToolbar, 
         IonFooter, 
         IonIcon } from '@ionic/angular/standalone';
-
-
+import { SharedModule } from "../shared.module";
+import { Items } from 'src/app/models/items.models';
+import { ItemsComponent } from '../items/items.component';
 
 
 @Component({
   selector: 'app-accordion',
   standalone: true,
   templateUrl: './accordion.component.html',
-  styleUrls: ['./accordion.component.scss'],
-  imports: [IonIcon, IonFooter, IonToolbar, IonTitle, 
-            IonItem, 
-            IonLabel, 
-            IonAccordion,
-            IonAccordionGroup, 
-            IonCardSubtitle, 
-            IonButton, 
-            IonCardTitle, 
-            IonContent,
-            IonModal,
-            ModalComponent,
-            RouterLink
-            ]
+  imports: [
+    IonIcon, 
+    IonFooter, 
+    IonToolbar, 
+    IonTitle,
+    IonItem,
+    IonLabel,
+    IonAccordion,
+    IonAccordionGroup,
+    IonCardSubtitle,
+    IonButton,
+    IonCardTitle,
+    IonContent,
+    IonModal,
+    ModalComponent,
+    ItemsComponent,
+    RouterLink,
+  ]
 })
 export class AccordionComponent  implements OnInit {
 
@@ -52,9 +57,8 @@ export class AccordionComponent  implements OnInit {
   isModal = input<boolean>(false);
   title = input.required<string>();
   titleColor = input<string>('primary');
-  accordionContentList = input<Accordion[]>([]);
-  
-  
+  accordionContentList = input<Accordion[]>();
+    
   
   cancel(){
     this.modal.dismiss();

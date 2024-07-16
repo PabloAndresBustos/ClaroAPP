@@ -4,15 +4,15 @@ import { Items } from 'src/app/models/items.models';
 import { Component, OnInit, inject } from '@angular/core';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ViewService } from 'src/app/services/viewService.service';
-
-
+import { Accordion } from 'src/app/models/accordion.models';
+import { IonAccordionGroup, IonAccordion } from "@ionic/angular/standalone";
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
   standalone: true,
-  imports: [SharedModule]
+  imports: [IonAccordion, IonAccordionGroup, SharedModule]
 })
 export class HomePage implements OnInit{
 
@@ -54,7 +54,7 @@ export class HomePage implements OnInit{
     {title: 'Empresas', url: 'empresas', icon: 'business-outline'},
     {title: 'Negocios', url: 'negocios', icon: 'bag-handle-outline'},
     {title: 'Personas', url: 'personas', icon: 'person-outline'},
-    /* {title: 'Contacto', url: '/contacto', icon: 'call-outline'} */
+    {title: 'Contacto', url: '/contacto', icon: 'call-outline'}
   ]
 
   itemsPeoples:Items[] = [
@@ -64,6 +64,20 @@ export class HomePage implements OnInit{
    {content: 'Contenidos'},
    {content: 'Roaming para tu viaje'},
    {content: 'Ayuda'} 
+  ]
+
+  accordionPeoples:Accordion[] = [
+    {title: 'Servicios',
+     content: 'Planes para tu casa',
+     list: [
+      'Planes para tu casa',
+      'Planes para tu celu',
+      'Packs de internet',
+      'Contenidos',
+      'Roaming para tu viaje',
+      'Ayuda' 
+     ]
+    }
   ]
 
   itemsBussinesServices:Items[] = [

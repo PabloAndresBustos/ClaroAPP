@@ -18,7 +18,7 @@ export class ItemsComponent  implements OnInit {
 
   title = input<string>();
   color = input<string>('primary');
-  items = input.required<Items[]>();
+  items = input<Items[]>();
   
   constructor() { }
 

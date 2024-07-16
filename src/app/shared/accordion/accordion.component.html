@@ -16,20 +16,22 @@
             {{item.content}}
             @if (item.list) {
               <h4>{{item.titleList}}</h4>
+                <ul style="list-style: none;">
               @for (element of item.list; track element) {
-                <ul>
                   <li>{{element}}</li>
-                </ul>
               }
+                </ul>
             }
           </div>
         </ion-accordion>
       }
     </ion-accordion-group>
   </div>
-  <ion-button expand="block" fill="clear" shape="round" id="masInfo" [routerLink]="router()">
-    {{buttonText()}}
-  </ion-button>
+  @if (buttonText()) {
+    <ion-button expand="block" fill="clear" shape="round" id="masInfo" [routerLink]="router()">
+      {{buttonText()}}
+    </ion-button>
+  }
 </div>
   @if(isModal()){
   <app-modal 
@@ -37,7 +39,7 @@
     [whithList]="false"
     [apps]="false"
     [moreInfo]="true"
-    [modalTrigger]="'masInfo'"
-    [titleContent]="'Contenido de Mas Info'"
+    modalTrigger="masInfo"
+    titleContent="Contenido de Mas Info"
   />
   }
