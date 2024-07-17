@@ -105,6 +105,10 @@ export class ModalComponent  implements OnInit {
     this.viewService.subPage.set(title);
   }
 
+  colorApps(){
+    return this.viewService.isDarkSelected();
+  }
+
   pages:Pages[] = [
     {title: 'Móviles', url: 'moviles', icon: ''},
     {title: 'Hogar', url: 'hogar', icon: ''},
