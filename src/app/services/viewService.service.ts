@@ -14,6 +14,7 @@ export class ViewService {
   login = signal<boolean>(false);
   userName = signal<string>('');
   selectedTheme = false;
+  isDarkSelected = signal<boolean>(false);
   //logoUrl = signal<string>('');
 
   changeIconTitle(iconName: string) {
@@ -32,6 +33,9 @@ export class ViewService {
 
   toggleChange(event: any) {
     this.themeStatus(event.detail.checked);
+    console.log(this.isDarkSelected())
+    this.isDarkSelected.update(value => value = !value);
+    console.log(this.isDarkSelected())
   }
 
   chageTheme() {
@@ -39,7 +43,7 @@ export class ViewService {
     this.initialTheme(preferTheme.matches);
     preferTheme.addEventListener('change', (mediaQuery) => {
       this.initialTheme(mediaQuery.matches);
-    })
+    });
   }
   /* fin de seleccion de Theme */
 

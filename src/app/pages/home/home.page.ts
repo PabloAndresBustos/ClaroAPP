@@ -1,6 +1,5 @@
 import { Router } from '@angular/router';
 import { Pages } from 'src/app/models/pages.models';
-import { Items } from 'src/app/models/items.models';
 import { Component, OnInit, inject } from '@angular/core';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ViewService } from 'src/app/services/viewService.service';
@@ -46,6 +45,10 @@ export class HomePage implements OnInit{
 
   page(){
     return this.viewService.page();
+  }
+
+  isDarkSelected(){
+    return this.viewService.isDarkSelected();
   }
   
   constructor() { }

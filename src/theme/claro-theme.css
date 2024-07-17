@@ -1,5 +1,8 @@
 :root{
     --ion-color-primary: #fa0000;
-    --ion-color-secondary: #700000;
     --background: linear-gradient(#fa0000, #ffffff);
+}
+
+.ion-palette-dark{
+    --ion-color-primary: #9b3939;
 }

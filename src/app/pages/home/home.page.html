@@ -14,7 +14,7 @@
       <ion-fab-button>
         <ion-icon name="chevron-up-circle"></ion-icon>
       </ion-fab-button>
-      <ion-fab-list side="top" class="fab-list">
+      <ion-fab-list side="top" [class]="isDarkSelected() ? 'fab-list-dark': 'fab-list'">
         @for (page of pages; track page) {
           <ion-label color="primary"> 
             <strong>{{page.title}}</strong> 
