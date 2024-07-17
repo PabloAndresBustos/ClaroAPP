@@ -88,7 +88,12 @@ export class ModalComponent  implements OnInit {
 
   loginLogOut(){
     this.viewService.login.update(value => value = !value);
-    this.viewService.userName.set('Test');
+    if(this.viewService.login()){
+      this.viewService.userName.set('Test');
+    }else{
+      this.viewService.userName.set('Ingresar');
+    }
+    
   }
 
   changeButton(){
