@@ -16,6 +16,7 @@ import {
         IonMenu} from '@ionic/angular/standalone';
 import { ViewService } from 'src/app/services/viewService.service';
 import { ModalComponent } from '../modal/modal.component';
+import { RouterLink } from '@angular/router';
 
 
 @Component({
@@ -36,13 +37,15 @@ import { ModalComponent } from '../modal/modal.component';
             IonFabList,
             IonFabButton,
             IonMenuButton,
-            ModalComponent
+            ModalComponent,
+            RouterLink
           ]
 })
 export class FooterComponent  implements OnInit {
 
   viewService = inject(ViewService);
   openModal = input<string>();
+  router = input<string>();
 
   constructor() { }
 

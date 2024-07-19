@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { CartComponent } from './cart/cart.component';
 import { ModalComponent } from './modal/modal.component';
@@ -50,6 +50,7 @@ import {
     CarrouselComponent,
     ItemsComponent,
     RouterLink,
+    ReactiveFormsModule,
     FormsModule,
     IonApp,
     IonRouterOutlet,
@@ -89,6 +90,7 @@ import {
     CarrouselComponent,
     ItemsComponent,
     RouterLink,
+    ReactiveFormsModule,
     FormsModule,
     IonApp,
     IonRouterOutlet,

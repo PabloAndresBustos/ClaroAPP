@@ -44,7 +44,16 @@ export const routes: Routes = [
   },
   {
     path: 'login',
-    loadComponent: () => import('./pages/login/login.page').then( m => m.LoginPage)
+    loadComponent: () => import('./pages/login/login.page').then( m => m.LoginPage),
+    children: [
+      {
+        path: 'sing-up',
+        loadComponent: () => import('./pages/login/sing-up/sing-up.page').then( m => m.SingUpPage)
+      },
+      {
+        path: 'forgot-password',
+        loadComponent: () => import('./pages/login/forgot-password/forgot-password.page').then( m => m.ForgotPasswordPage)
+      },
+    ]
   },
-
 ];

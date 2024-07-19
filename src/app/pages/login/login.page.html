@@ -1,8 +1,27 @@
 <app-header />
 <ion-content [fullscreen]="true">
-  <div>Logueo</div>
-  <ion-label>Usario</ion-label>
-  <ion-input type="text" placeholder="Awesome Input"></ion-input>
-  <ion-label>Password</ion-label>
-  <ion-input type="text" placeholder="Awesome Input"></ion-input>
+  <ion-item lines="none">
+    <img src="/assets/logos/ClaroOutline.png" alt="logo">  
+  </ion-item>
+  <form [formGroup]="form">
+    <ion-item lines="none">
+      <ion-icon slot="start" name="person-outline"></ion-icon>
+      <ion-input type="text" 
+      label="E-mail o numero de linea"
+      labelPlacement="floating"
+      [formControl]="form.controls.email"
+      />
+    </ion-item>
+    <ion-item lines="none">
+      <ion-icon slot="start" name="lock-closed-outline"></ion-icon>
+      <ion-input type="text" 
+      label="Contraseña"
+      labelPlacement="floating"
+      [formControl]="form.controls.password"
+      />
+      <ion-button slot="end" fill="clear" shape="round" style="width: 25px;">
+        <ion-icon slot="icon-only" name="eye-outline"></ion-icon>  
+      </ion-button>
+    </ion-item>
+  </form>
 </ion-content>

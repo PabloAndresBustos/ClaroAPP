@@ -1,5 +1,5 @@
 <app-header 
-  [modal]="'modal-login'"
+  [router]="'/login'"
 />
 <app-modal
 [subTitleContent]="'Inicia Sesión'" 
@@ -125,7 +125,7 @@
     <ion-router-outlet id="menu-end" main></ion-router-outlet>
   </ion-content>
 <app-footer 
-[openModal]="'apps-modal'"
+[router]="'/login'"
 />
 <app-modal
 [subTitleContent]="'Inicia Sesión'" 
