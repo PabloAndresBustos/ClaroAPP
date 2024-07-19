@@ -55,8 +55,20 @@
         }
       </div>
     }
-    <p class="ion-text-end" routerLink="forgot-password">Recuperar contraseña</p>
-    <ion-button expand="block" type="submit" [disabled]="form.invalid" style="width: 60%; margin: 0 auto;">
+    <p class="ion-text-end" id="open-forgot-password">Recuperar contraseña</p>
+    <app-modal
+    [moreInfo]="false"
+    [whithList]="false"
+    [selectClass]="false"
+    [apps]="true"
+    [modalTrigger]="'open-forgot-password'"
+    [titleContent]="'Recupercion de contraseña'"
+    />
+    <ion-button 
+    expand="block" 
+    type="submit" 
+    [disabled]="form.invalid" 
+    style="width: 60%; margin: 0 auto;">
       <ion-icon slot="start" name="log-in-outline"></ion-icon>
       Ingresar
     </ion-button>

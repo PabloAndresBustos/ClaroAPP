@@ -43,9 +43,9 @@ export class HeaderComponent  implements OnInit {
     return this.viewService.userName();
   }
 
-  getLogin(){
+/*   getLogin(){
     return this.viewService.login();
-  }
+  } */
 
   /*logoUrl(){
     return this.viewService.logoUrl();

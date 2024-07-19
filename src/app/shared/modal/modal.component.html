@@ -46,46 +46,24 @@
     @if(apps()){
       <ion-header>
         <ion-toolbar color="primary">
-          <ion-title> {{subTitleContent()}} </ion-title>
-          <ion-button expand="block" fill="clear" shape="round" slot="end" (click)="cancel()">
-            <ion-icon name="close-circle-outline" color="light"></ion-icon>
+          <ion-title> Recuperar cuenta </ion-title>
+          <ion-button expand="block" fill="clear" slot="end" (click)="cancel()">
+            <ion-icon name="close-circle-outline" color="light" style="font-size: 35px;"></ion-icon>
           </ion-button>
         </ion-toolbar>
       </ion-header>
-      @if (!login()) {
-      <ion-input
-        label="Usuario" 
-        label-placement="floating" 
-        fill="outline" 
-        placeholder="Ingresa usuario o número de linea"
-        value="Test"
-        class="ion-margin"
-        disabled="true"></ion-input>
-      <ion-input
-        label="Contraseña"
-        label-placement="floating" 
-        fill="outline" 
-        placeholder="Contraseña"
-        value="test"
-        class="ion-margin"
-        disabled="true"></ion-input>
-      }@else {
-        <div>
-          @for (button of buttons; track button) {
-            <ion-button 
-            expand="block" 
-            fill="solid" 
-            [routerLink]="button.url" 
-            (click)="cancel()" 
-            [color]="colorApps() ? 'light' : 'dark'">
-              <img [src]="button.icon">
-            </ion-button>
-          }
-        </div>
-      }
-      <ion-button expand="block" fill="solid" (click)="loginLogOut()">
-        {{ changeButton() }}
-      </ion-button>
+        <form [formGroup]="recoveryForm">
+          <ion-input
+          label="E-mail" 
+          lines="none"
+          label-placement="floating"
+          class="ion-margin"
+          [formControl]="recoveryForm.controls.email"
+          />
+          <ion-button expand="block" fill="solid">
+            Enviar contraseña
+          </ion-button>
+        </form>
     }
 
     @if(whithList() || moreInfo()){

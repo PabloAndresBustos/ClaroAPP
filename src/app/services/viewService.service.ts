@@ -11,7 +11,7 @@ export class ViewService {
   buttonPosition = signal<string>('end');
   alertOpen = signal<boolean>(false);
   loginAlert = signal<boolean>(false);
-  login = signal<boolean>(false);
+  //login = signal<boolean>(false);
   userName = signal<string>('');
   selectedTheme = false;
   isDarkSelected = signal<boolean>(false);

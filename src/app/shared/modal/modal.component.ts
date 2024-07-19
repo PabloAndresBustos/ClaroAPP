@@ -1,4 +1,5 @@
 import { Router, RouterLink } from '@angular/router';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Pages } from 'src/app/models/pages.models';
 import { ViewService } from 'src/app/services/viewService.service';
 import { 
@@ -58,7 +59,8 @@ import {
             IonContent,
             IonSegment,
             IonSegmentButton,
-            RouterLink
+            RouterLink,
+            ReactiveFormsModule
             ]
 })
 export class ModalComponent  implements OnInit {
@@ -77,16 +79,20 @@ export class ModalComponent  implements OnInit {
   moreInfo = input.required<boolean>();
   whithList = input.required<boolean>();
   selectClass = input.required<boolean>();
+
+  recoveryForm = new FormGroup({
+    email: new FormControl('', [Validators.required, Validators.email])
+  })
   
-  login(){
+/*   login(){
     return this.viewService.login();
-  }
+  } */
 
   cancel(){
     this.modal.dismiss();
   }
 
-  loginLogOut(){
+/*   loginLogOut(){
     this.viewService.login.update(value => value = !value);
     if(this.viewService.login()){
       this.viewService.userName.set('Test');
@@ -94,9 +100,9 @@ export class ModalComponent  implements OnInit {
       this.viewService.userName.set('Ingresar');
     }
     
-  }
+  } */
 
-  changeButton(){
+/*   changeButton(){
     let textButton = '';
     if(this.login()){
       textButton = 'Cerrar Sesión';
@@ -104,7 +110,7 @@ export class ModalComponent  implements OnInit {
       textButton = 'Iniciar Sesión';
     }
     return textButton;
-  }
+  } */
   
   changeTitle(title:string){
     this.viewService.subPage.set(title);
