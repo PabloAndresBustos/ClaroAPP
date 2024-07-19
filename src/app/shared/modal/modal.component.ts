@@ -29,7 +29,7 @@ import {
          IonRouterOutlet, 
          IonTitle, 
          IonInput, 
-         IonHeader } from "@ionic/angular/standalone";
+         IonHeader, IonText } from "@ionic/angular/standalone";
 
 
 @Component({
@@ -37,7 +37,7 @@ import {
   standalone: true,
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.scss'],
-  imports: [
+  imports: [IonText, 
             IonHeader, 
             IonInput, 
             IonTitle, 

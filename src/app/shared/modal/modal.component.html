@@ -1,8 +1,7 @@
 <ion-modal [trigger]="modalTrigger()" [class]="selectClass() ? 'normalModal' : 'littleModal'">
   <ng-template>
-
+    <ion-content>
     @if(whithList()){
-      <ion-content class="ion-padding">
         <ion-list>
           <ion-list-header class="ion-align-items-center">
             <ion-card class="ion-no-border">
@@ -23,7 +22,6 @@
             }
           }
         </ion-list>
-      </ion-content> 
       }
       
     @if(moreInfo()){
@@ -60,8 +58,22 @@
           class="ion-margin"
           [formControl]="recoveryForm.controls.email"
           />
-          <ion-button expand="block" fill="solid">
-            Enviar contraseña
+          @if (recoveryForm.controls.email.errors && recoveryForm.controls.email.touched) {
+            <div>
+              @if (recoveryForm.controls.email.errors?.['required']) {
+                <ion-text color="primary" class="ion-text-center"> 
+                  <h5>El correo es requerido</h5>
+                </ion-text>
+              }
+              @if (recoveryForm.controls.email.errors?.['email']) {
+                <ion-text color="primary" class="ion-text-center">
+                  <h5>Ingrese un correo valido</h5>
+                </ion-text>
+              }
+            </div>
+          }
+          <ion-button expand="block" fill="solid" style="position: fixed; bottom: 0; right: 0; left: 0;">
+            Enviar nueva contraseña
           </ion-button>
         </form>
     }
@@ -75,5 +87,6 @@
         </ion-toolbar>
       </ion-footer>
     }
+    </ion-content> 
   </ng-template>
 </ion-modal>
