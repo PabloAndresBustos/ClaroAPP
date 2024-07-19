@@ -1,5 +1,3 @@
-import { Items } from "./items.models"
-
 export interface Accordion{
     title?:string,
     content?:string,

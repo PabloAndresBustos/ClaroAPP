@@ -7,6 +7,7 @@ import { bootstrapApplication } from '@angular/platform-browser';
 import { IonicRouteStrategy, provideIonicAngular } from '@ionic/angular/standalone';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { RouteReuseStrategy, provideRouter, withPreloading, PreloadAllModules } from '@angular/router';
+import { AngularFireModule } from '@angular/fire/compat';
 
 if (environment.production) {
   enableProdMode();
@@ -14,10 +15,13 @@ if (environment.production) {
 
 register();
 
+AngularFireModule.initializeApp(environment.firebaseConfig),
+
 bootstrapApplication(AppComponent, {
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     provideIonicAngular(),
-    provideRouter(routes, withPreloading(PreloadAllModules)), provideAnimationsAsync(),
+    provideRouter(routes, withPreloading(PreloadAllModules)),
+    provideAnimationsAsync(),
   ],
 });

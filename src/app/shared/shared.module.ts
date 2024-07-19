@@ -31,7 +31,9 @@ import {
         IonAlert,
         IonList,
         IonListHeader,
-        IonApp} from '@ionic/angular/standalone';
+        IonApp,
+        IonInput,
+        IonGrid} from '@ionic/angular/standalone';
 
 
 
@@ -52,6 +54,8 @@ import {
     IonApp,
     IonRouterOutlet,
     IonList,
+    IonInput,
+    IonGrid,
     IonListHeader,
     IonHeader,
     IonIcon,
@@ -89,6 +93,8 @@ import {
     IonApp,
     IonRouterOutlet,
     IonList,
+    IonInput,
+    IonGrid,
     IonListHeader,
     IonHeader,
     IonIcon,

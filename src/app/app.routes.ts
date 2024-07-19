@@ -42,5 +42,9 @@ export const routes: Routes = [
     path: 'claro-pay',
     loadComponent: () => import('./pages/claro-pay/claro-pay.page').then( m => m.ClaroPayPage)
   },
+  {
+    path: 'login',
+    loadComponent: () => import('./pages/login/login.page').then( m => m.LoginPage)
+  },
 
 ];
