@@ -17,6 +17,7 @@ log.txt
 /.versions
 /coverage
 /android
+/environments
 
 # Ionic
 /.ionic

@@ -23,32 +23,28 @@ export const routes: Routes = [
     ]
   },
   {
-    path: 'mi-claro',
-    loadComponent: () => import('./pages/mi-claro/mi-claro.page').then( m => m.MiClaroPage)
-  },
-  {
-    path: 'claro-video',
-    loadComponent: () => import('./pages/claro-video/claro-video.page').then( m => m.ClaroVideoPage)
-  },
-  {
-    path: 'claro-tienda',
-    loadComponent: () => import('./pages/claro-tienda/claro-tienda.page').then( m => m.ClaroTiendaPage)
-  },
-  {
-    path: 'claro-musica',
-    loadComponent: () => import('./pages/claro-musica/claro-musica.page').then( m => m.ClaroMusicaPage)
-  },
-  {
-    path: 'claro-pay',
-    loadComponent: () => import('./pages/claro-pay/claro-pay.page').then( m => m.ClaroPayPage)
-  },
-  {
     path: 'login',
     loadComponent: () => import('./pages/login/login.page').then( m => m.LoginPage),
     children: [
       {
-        path: 'sing-up',
-        loadComponent: () => import('./pages/login/sing-up/sing-up.page').then( m => m.SingUpPage)
+        path: 'mi-claro',
+        loadComponent: () => import('./pages/mi-claro/mi-claro.page').then( m => m.MiClaroPage)
+      },
+      {
+        path: 'claro-video',
+        loadComponent: () => import('./pages/claro-video/claro-video.page').then( m => m.ClaroVideoPage)
+      },
+      {
+        path: 'claro-tienda',
+        loadComponent: () => import('./pages/claro-tienda/claro-tienda.page').then( m => m.ClaroTiendaPage)
+      },
+      {
+        path: 'claro-musica',
+        loadComponent: () => import('./pages/claro-musica/claro-musica.page').then( m => m.ClaroMusicaPage)
+      },
+      {
+        path: 'claro-pay',
+        loadComponent: () => import('./pages/claro-pay/claro-pay.page').then( m => m.ClaroPayPage)
       },
       {
         path: 'forgot-password',

@@ -1,4 +1,4 @@
-import { Component, OnInit, inject, input } from '@angular/core';
+import { Component, OnInit, inject, input, signal } from '@angular/core';
 import { IonTitle, IonToolbar, IonHeader, IonButton, IonIcon, IonList, IonItem, IonSelect, IonSelectOption, IonActionSheet, IonToggle, IonLabel } from '@ionic/angular/standalone';
 import { ViewService } from 'src/app/services/viewService.service';
 import { FormsModule } from '@angular/forms';
@@ -33,7 +33,8 @@ export class HeaderComponent  implements OnInit {
   viewService = inject(ViewService);
   modal = input<string>();
   router = input<string>();
-
+  withButton = input<boolean>(true);
+  
   getIconTitle(){
     return this.viewService.headerIcon();
   }
