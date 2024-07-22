@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, inject, input} from '@angular/core';
+import { Component, Input, OnInit, inject, input, signal} from '@angular/core';
 import { 
         IonButton, 
         IonFooter, 
@@ -16,7 +16,7 @@ import {
         IonMenu} from '@ionic/angular/standalone';
 import { ViewService } from 'src/app/services/viewService.service';
 import { ModalComponent } from '../modal/modal.component';
-import { RouterLink } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 
 
 @Component({
@@ -44,11 +44,21 @@ import { RouterLink } from '@angular/router';
 export class FooterComponent  implements OnInit {
 
   viewService = inject(ViewService);
+  router = inject(ActivatedRoute);
   openModal = input<string>();
-  router = input<string>();
+  
+  loginRecovery(){
+    return this.viewService.loginRecovery();
+  }
+
+  ChangeAppButton(){
+    return this.viewService.ChangeAppButton();
+  }
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    
+  }
 
 }

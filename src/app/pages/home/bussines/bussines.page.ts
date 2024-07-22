@@ -15,10 +15,10 @@ import { ViewService } from 'src/app/services/viewService.service';
 export class BussinesPage implements OnInit {
 
   route = inject(ActivatedRoute);
-  viweService = inject(ViewService);
+  viewService = inject(ViewService);
 
   page() {
-    return this.viweService.page();
+    return this.viewService.page();
   }
 
   accordionInfo: Accordion[] = [
@@ -392,7 +392,7 @@ export class BussinesPage implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.route.params.subscribe(params => this.viweService.page.set(params['route']));
+    this.route.params.subscribe(params => this.viewService.page.set(params['route']));
   }
 
 }

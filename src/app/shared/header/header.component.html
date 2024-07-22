@@ -6,8 +6,8 @@
       slot="start" 
       fill="clear" 
       color="light" 
-      [id]="modal()" 
-      [routerLink]="router()"
+      routerLink="login"
+      (click)="ChangeAppButton()"
       >
         <ion-icon [name]="getIconTitle()" node="md" class="login"></ion-icon>
         @if (getTitle()) {

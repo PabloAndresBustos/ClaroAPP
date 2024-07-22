@@ -43,6 +43,10 @@ export class HeaderComponent  implements OnInit {
     return this.viewService.userName();
   }
 
+  ChangeAppButton(){
+    return this.viewService.ChangeAppButton();
+  }
+
   constructor() { }
 
   ngOnInit() {}

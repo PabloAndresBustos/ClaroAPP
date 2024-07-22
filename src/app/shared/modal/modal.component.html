@@ -40,53 +40,14 @@
         <ion-router-outlet></ion-router-outlet>
       </ion-content>
     }
-
-    @if(apps()){
-      <ion-header>
-        <ion-toolbar color="primary">
-          <ion-title> Recuperar cuenta </ion-title>
-          <ion-button expand="block" fill="clear" slot="end" (click)="cancel()">
-            <ion-icon name="close-circle-outline" color="light" style="font-size: 35px;"></ion-icon>
-          </ion-button>
-        </ion-toolbar>
-      </ion-header>
-        <form [formGroup]="recoveryForm">
-          <ion-input
-          label="E-mail" 
-          lines="none"
-          label-placement="floating"
-          class="ion-margin"
-          [formControl]="recoveryForm.controls.email"
-          />
-          @if (recoveryForm.controls.email.errors && recoveryForm.controls.email.touched) {
-            <div>
-              @if (recoveryForm.controls.email.errors?.['required']) {
-                <ion-text color="primary" class="ion-text-center"> 
-                  <h5>El correo es requerido</h5>
-                </ion-text>
-              }
-              @if (recoveryForm.controls.email.errors?.['email']) {
-                <ion-text color="primary" class="ion-text-center">
-                  <h5>Ingrese un correo valido</h5>
-                </ion-text>
-              }
-            </div>
-          }
-          <ion-button expand="block" fill="solid" style="position: fixed; bottom: 0; right: 0; left: 0;">
-            Enviar nueva contraseña
-          </ion-button>
-        </form>
-    }
-
-    @if(whithList() || moreInfo()){
-      <ion-footer>
-        <ion-toolbar color="primary">
-          <ion-button expand="block" fill="clear" shape="round" (click)="cancel()">
-            <ion-icon name="close-circle-outline" color="light"></ion-icon>
-          </ion-button>
-        </ion-toolbar>
-      </ion-footer>
-    }
+    
     </ion-content> 
+    <ion-footer>
+      <ion-toolbar color="primary">
+        <ion-button expand="block" fill="clear" shape="round" (click)="cancel()">
+          <ion-icon name="close-circle-outline" color="light"></ion-icon>
+        </ion-button>
+      </ion-toolbar>
+    </ion-footer>
   </ng-template>
 </ion-modal>

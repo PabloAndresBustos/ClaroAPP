@@ -1,4 +1,3 @@
-import { Router } from '@angular/router';
 import { Pages } from 'src/app/models/pages.models';
 import { Component, OnInit, inject } from '@angular/core';
 import { SharedModule } from 'src/app/shared/shared.module';
