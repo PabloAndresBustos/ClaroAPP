@@ -16,7 +16,6 @@ import { IonAccordionGroup, IonAccordion } from "@ionic/angular/standalone";
 export class HomePage implements OnInit{
 
   viewService = inject(ViewService);
-  router = inject(Router);
   alertMessage:string = '';
  
   onWillOpen(){

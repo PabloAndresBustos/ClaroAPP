@@ -1,21 +1,21 @@
-import { Component, input, OnInit, signal } from '@angular/core';
+import { Component, inject, input, OnInit, signal } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { IonText } from "@ionic/angular/standalone";
-import { RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
   standalone: true,
-  imports: [IonText, SharedModule, RouterLink]
+  imports: [IonText, SharedModule]
 })
 export class LoginPage implements OnInit {
 
   showHidePassword = signal<boolean>(true);
   type = signal<string>('password');
-  router = input<string>();
+  router = inject(Router);
   
   form = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
@@ -31,6 +31,10 @@ export class LoginPage implements OnInit {
 
   submit(){
     console.log(this.form.value);
+  }
+
+  forgotPassword(){
+    this.router.navigateByUrl('home/forgot-password');
   }
 
   constructor() { }

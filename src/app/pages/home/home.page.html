@@ -1,15 +1,7 @@
 <app-header 
   [router]="'/login'"
 />
-<app-modal
-[subTitleContent]="'Inicia Sesión'" 
-[selectClass]="false"
-[moreInfo]="false"
-[whithList]="false"
-[apps]="true"
-[modalTrigger]="'modal-login'"
-/>
-  <ion-content class="content">
+<ion-content class="content">
     <ion-fab slot="fixed" vertical="bottom" [horizontal]="buttonPosition()">
       <ion-fab-button>
         <ion-icon name="chevron-up-circle"></ion-icon>
@@ -123,15 +115,5 @@
       </ion-content>
     </ion-menu>
     <ion-router-outlet id="menu-end" main></ion-router-outlet>
-  </ion-content>
-<app-footer 
-[router]="'/login'"
-/>
-<app-modal
-[subTitleContent]="'Inicia Sesión'" 
-[selectClass]="false"
-[moreInfo]="false"
-[whithList]="false"
-[apps]="true"
-[modalTrigger]="'apps-modal'"
-/>
+</ion-content>
+<app-footer />
