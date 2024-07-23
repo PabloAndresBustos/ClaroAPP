@@ -7,7 +7,8 @@
       fill="clear" 
       color="light" 
       routerLink="login"
-      (click)="ChangeAppButton()"
+      (click)="buttonsChangeState()"
+      [disabled]="headerButton()"
       >
         <ion-icon [name]="getIconTitle()" node="md" class="login"></ion-icon>
         @if (getTitle()) {

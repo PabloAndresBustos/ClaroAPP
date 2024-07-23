@@ -17,6 +17,7 @@ export class ViewService {
   isDarkSelected = signal<boolean>(false);
   //logoUrl = signal<string>('');
   loginRecovery = signal<boolean>(false);
+  headerButton = signal<boolean>(false);
 
   changeIconTitle(iconName: string) {
     this.headerIcon.set(iconName);
@@ -24,6 +25,7 @@ export class ViewService {
 
   ChangeAppButton(){
     this.loginRecovery.update(value => value = !value)
+    this.headerButton.update(value => value = !value)
   }
 
   /* Seleccion de Theme */

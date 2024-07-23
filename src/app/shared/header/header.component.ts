@@ -33,10 +33,14 @@ export class HeaderComponent  implements OnInit {
   viewService = inject(ViewService);
   modal = input<string>();
   router = input<string>();
-  withButton = input<boolean>(true);
+  withButton = input<boolean>(false);
   
   getIconTitle(){
     return this.viewService.headerIcon();
+  }
+
+  buttonsChangeState(){
+    this.ChangeAppButton();
   }
 
   getTitle(){
@@ -45,6 +49,10 @@ export class HeaderComponent  implements OnInit {
 
   ChangeAppButton(){
     return this.viewService.ChangeAppButton();
+  }
+
+  headerButton(){
+    return this.viewService.headerButton();
   }
 
   constructor() { }

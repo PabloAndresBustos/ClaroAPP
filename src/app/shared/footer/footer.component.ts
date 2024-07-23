@@ -55,6 +55,10 @@ export class FooterComponent  implements OnInit {
     return this.viewService.ChangeAppButton();
   }
 
+  headerButton(){
+    this.viewService.headerButton.update(value => value = !value);
+  }
+
   constructor() { }
 
   ngOnInit() {
