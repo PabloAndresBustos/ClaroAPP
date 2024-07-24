@@ -7,4 +7,4 @@ import { SharedModule } from './shared/shared.module';
   standalone: true,
   imports: [SharedModule],
 })
-export class AppComponent {}
+export class AppComponent{}

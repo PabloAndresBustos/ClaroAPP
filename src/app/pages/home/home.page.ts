@@ -1,21 +1,22 @@
 import { Pages } from 'src/app/models/pages.models';
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ViewService } from 'src/app/services/viewService.service';
 import { Accordion } from 'src/app/models/accordion.models';
-import { IonAccordionGroup, IonAccordion } from "@ionic/angular/standalone";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
   standalone: true,
-  imports: [IonAccordion, IonAccordionGroup, SharedModule]
+  imports: [ SharedModule ]
 })
 export class HomePage{
 
   viewService = inject(ViewService);
   alertMessage:string = '';
+  currentRouter = inject(Router);
  
   onWillOpen(){
     this.viewService.buttonPosition.set('start')

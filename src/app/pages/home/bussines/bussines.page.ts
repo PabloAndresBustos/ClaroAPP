@@ -1,4 +1,4 @@
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Images } from 'src/app/models/images.models';
 import { Component, OnInit, inject } from '@angular/core';
 import { SharedModule } from 'src/app/shared/shared.module';
@@ -16,10 +16,13 @@ export class BussinesPage implements OnInit {
 
   route = inject(ActivatedRoute);
   viewService = inject(ViewService);
+  currentRoute = inject(Router);
 
   page() {
     return this.viewService.page();
   }
+
+
 
   accordionInfo: Accordion[] = [
     {

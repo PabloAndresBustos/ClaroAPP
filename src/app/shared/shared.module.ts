@@ -33,7 +33,9 @@ import {
         IonListHeader,
         IonApp,
         IonInput,
-        IonGrid} from '@ionic/angular/standalone';
+        IonGrid,
+        IonAccordionGroup,
+        IonAccordion} from '@ionic/angular/standalone';
 
 
 
@@ -77,7 +79,9 @@ import {
     IonFooter,
     IonRouterOutlet,
     IonToggle,
-    IonAlert
+    IonAlert,
+    IonAccordion,
+    IonAccordionGroup
   ],
   exports:[
     CommonModule,
@@ -117,7 +121,9 @@ import {
     IonFooter,
     IonRouterOutlet,
     IonToggle,
-    IonAlert
+    IonAlert,
+    IonAccordion,
+    IonAccordionGroup
   ]
 })
 export class SharedModule { }
