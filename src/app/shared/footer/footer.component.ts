@@ -16,7 +16,7 @@ import {
       } from '@ionic/angular/standalone';
 import { ViewService } from 'src/app/services/viewService.service';
 import { ModalComponent } from '../modal/modal.component';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 
 @Component({
@@ -44,7 +44,7 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 export class FooterComponent{
 
   viewService = inject(ViewService);
-  router = inject(ActivatedRoute);
+  router = inject(Router);
   openModal = input<string>();
   
   loginRecovery(){
@@ -52,10 +52,8 @@ export class FooterComponent{
   }
 
   ChangeAppButton(){
+    this.router.navigateByUrl('/');
     return this.viewService.ChangeAppButton();
   }
 
-  headerButton(){
-    this.viewService.headerButton.update(value => value = !value);
-  }
 }

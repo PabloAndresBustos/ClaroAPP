@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { Component, HostListener, inject, OnDestroy, OnInit, signal } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { IonText } from "@ionic/angular/standalone";
@@ -12,12 +12,13 @@ import { ViewService } from 'src/app/services/viewService.service';
   standalone: true,
   imports: [IonText, SharedModule]
 })
-export class LoginPage implements OnInit {
+export class LoginPage implements OnInit, OnDestroy {
 
   showHidePassword = signal<boolean>(true);
   type = signal<string>('password');
   router = inject(Router);
   viewService = inject(ViewService);
+
   
   form = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
@@ -39,14 +40,12 @@ export class LoginPage implements OnInit {
     this.router.navigateByUrl('home/forgot-password');
   }
 
-  isRouterLogin(url:string){
-    if (url === 'login'){
-      this.viewService.ChangeAppButton();
-    }
+  ngOnInit() {
+    this.viewService.ChangeAppButton();
   }
 
-  ngOnInit() {
-    this.isRouterLogin(this.router.url.split('/')[2])
+  ngOnDestroy() {
+    this.viewService.ChangeAppButton();
   }
 
 }
