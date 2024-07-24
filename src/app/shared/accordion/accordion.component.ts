@@ -44,7 +44,7 @@ import { ItemsComponent } from '../items/items.component';
     RouterLink,
   ]
 })
-export class AccordionComponent  implements OnInit {
+export class AccordionComponent{
 
   
   @ViewChild(IonModal) modal!:IonModal;
@@ -53,8 +53,8 @@ export class AccordionComponent  implements OnInit {
   color = input<string>();
   title = input<string>();
   router = input<string>();
-  whithList = input<boolean>();
   subtitle = input<string>();
+  whithList = input<boolean>();
   buttonText = input<string>();
   isModal = input<boolean>(false);
   titleColor = input<string>('primary');
@@ -64,9 +64,4 @@ export class AccordionComponent  implements OnInit {
   cancel(){
     this.modal.dismiss();
   }
-
-  constructor() { }
-
-  ngOnInit() {}
-
 }

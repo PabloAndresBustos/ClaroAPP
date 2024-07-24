@@ -28,7 +28,7 @@ import { RouterLink } from '@angular/router';
     RouterLink
   ]
 })
-export class HeaderComponent  implements OnInit {
+export class HeaderComponent{
 
   viewService = inject(ViewService);
   modal = input<string>();
@@ -54,9 +54,4 @@ export class HeaderComponent  implements OnInit {
   headerButton(){
     return this.viewService.headerButton();
   }
-
-  constructor() { }
-
-  ngOnInit() {}
-
 }

@@ -33,17 +33,12 @@ import {
             ModalComponent
           ]
 })
-export class CarrouselComponent  implements OnInit {
+export class CarrouselComponent{
 
   openModal = input<string>();
   titleContent = input<string>();
   contentList = input<string[]>();
   subTitleContent = input<string>();
   imageList = input.required<Images[]>();
-
-  constructor() { }
-
-  ngOnInit() {
-  }
 
 }

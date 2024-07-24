@@ -12,7 +12,7 @@ import { IonAccordionGroup, IonAccordion } from "@ionic/angular/standalone";
   standalone: true,
   imports: [IonAccordion, IonAccordionGroup, SharedModule]
 })
-export class HomePage implements OnInit{
+export class HomePage{
 
   viewService = inject(ViewService);
   alertMessage:string = '';
@@ -48,8 +48,6 @@ export class HomePage implements OnInit{
   isDarkSelected(){
     return this.viewService.isDarkSelected();
   }
-  
-  constructor() { }
   
   pages:Pages[] = [
     {title: 'Empresas', url: 'empresas', icon: 'business-outline'},
@@ -157,9 +155,5 @@ export class HomePage implements OnInit{
   itemsFooter:Accordion[] = [
     {content: 'Botón de baja'},
     {content: 'Portal de denuncias'}
-   ]
-
-  ngOnInit() {
-    
-  }
+  ]
 }

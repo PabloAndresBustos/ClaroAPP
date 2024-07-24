@@ -12,8 +12,8 @@ import {
         IonFab,
         IonFabList, 
         IonButtons, 
-        IonMenuButton,
-        IonMenu} from '@ionic/angular/standalone';
+        IonMenuButton
+      } from '@ionic/angular/standalone';
 import { ViewService } from 'src/app/services/viewService.service';
 import { ModalComponent } from '../modal/modal.component';
 import { ActivatedRoute, RouterLink } from '@angular/router';
@@ -41,7 +41,7 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
             RouterLink
           ]
 })
-export class FooterComponent  implements OnInit {
+export class FooterComponent{
 
   viewService = inject(ViewService);
   router = inject(ActivatedRoute);
@@ -58,11 +58,4 @@ export class FooterComponent  implements OnInit {
   headerButton(){
     this.viewService.headerButton.update(value => value = !value);
   }
-
-  constructor() { }
-
-  ngOnInit() {
-    
-  }
-
 }

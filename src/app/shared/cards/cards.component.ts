@@ -28,7 +28,7 @@ import {
             IonInput,
             IonTitle]
 })
-export class CardsComponent  implements OnInit {
+export class CardsComponent{
 
   imageUrl = input<string>();
   title = input.required<string>();
@@ -39,10 +39,5 @@ export class CardsComponent  implements OnInit {
   buttonText = input.required<string>();
   inputText = input.required<boolean>();
   contentTitle = input.required<string>();
-  
-  
-  constructor() { }
-
-  ngOnInit() {}
 
 }

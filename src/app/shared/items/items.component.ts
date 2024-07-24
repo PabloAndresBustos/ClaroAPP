@@ -14,14 +14,10 @@ import { IonItem, IonLabel, IonTitle } from '@ionic/angular/standalone';
             RouterLink
             ]
 })
-export class ItemsComponent  implements OnInit {
+export class ItemsComponent{
 
   title = input<string>();
   color = input<string>('primary');
   items = input<Items[]>();
-  
-  constructor() { }
-
-  ngOnInit() {}
 
 }

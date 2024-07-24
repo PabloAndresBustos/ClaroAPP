@@ -5,20 +5,21 @@ import { Injectable, signal } from '@angular/core';
 })
 export class ViewService {
 
-  headerIcon = signal<string>('person-outline');
-  page = signal<string>('');
-  subPage = signal<string>('moviles');
-  buttonPosition = signal<string>('end');
-  alertOpen = signal<boolean>(false);
-  loginAlert = signal<boolean>(false);
-  //login = signal<boolean>(false);
-  userName = signal<string>('');
   selectedTheme = false;
-  isDarkSelected = signal<boolean>(false);
-  //logoUrl = signal<string>('');
-  loginRecovery = signal<boolean>(false);
+  page = signal<string>('');
+  userName = signal<string>('');
+  alertOpen = signal<boolean>(false);
+  subPage = signal<string>('moviles');
+  loginAlert = signal<boolean>(false);
   headerButton = signal<boolean>(false);
-
+  loginRecovery = signal<boolean>(false);
+  buttonPosition = signal<string>('end');
+  isDarkSelected = signal<boolean>(false);
+  headerIcon = signal<string>('person-outline'); 
+  //login = signal<boolean>(false);
+  //logoUrl = signal<string>('');
+  
+  
   changeIconTitle(iconName: string) {
     this.headerIcon.set(iconName);
   }
@@ -53,6 +54,4 @@ export class ViewService {
     });
   }
   /* fin de seleccion de Theme */
-
-  constructor() { }
 }

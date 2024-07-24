@@ -38,8 +38,6 @@ export class LoginPage implements OnInit {
     this.router.navigateByUrl('home/forgot-password');
   }
 
-  constructor() { }
-
   ngOnInit() {
     this.currentRouter.params.subscribe(params => console.log(params['route']));
   }

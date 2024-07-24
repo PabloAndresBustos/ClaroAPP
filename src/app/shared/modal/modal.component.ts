@@ -63,7 +63,7 @@ import {
             ReactiveFormsModule
             ]
 })
-export class ModalComponent  implements OnInit {
+export class ModalComponent{
 
   @ViewChild(IonModal) modal!:IonModal;
 
@@ -104,11 +104,5 @@ export class ModalComponent  implements OnInit {
     {title: 'Claro Pay', url: '/claro-pay', icon: '/assets/logos/claro-pay.png'},
     {title: 'Tienda Claro', url: '/claro-tienda', icon: '/assets/logos/tienda-claro.png'}
   ]
-
-  constructor() { }
-
-  ngOnInit() {
-
-  }
 
 }
