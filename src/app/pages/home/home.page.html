@@ -116,10 +116,8 @@
         />
       </ion-content>
     </ion-menu>
-    <ion-router-outlet id="menu-end" main></ion-router-outlet>
+    <ion-router-outlet [classList]="isFooterVisible() && isLoginPage() ? 'ionRouter' : 'ionRouterHide'" id="menu-end" main></ion-router-outlet>
 </ion-content>
 @if (isFooterVisible()) {
   <app-footer />
 }
-
-<!-- Cambio del if por hidden -->
