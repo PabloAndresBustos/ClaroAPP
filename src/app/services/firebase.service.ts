@@ -8,7 +8,7 @@ import { User } from '../models/user.model';
 })
 export class FirebaseService {
 
-  auth = inject(AngularFireAuth);
+  //auth = inject(AngularFireAuth);
 
   singIn(user:User){
     return signInWithEmailAndPassword(getAuth(), user.email, user.password);

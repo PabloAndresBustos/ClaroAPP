@@ -11,6 +11,7 @@ export class ViewService {
   page = signal<string>('');
   userName = signal<string>('');
   alertOpen = signal<boolean>(false);
+  isLoginPage = signal<boolean>(true);
   subPage = signal<string>('moviles');
   loginAlert = signal<boolean>(false);
   headerButton = signal<boolean>(false);
@@ -18,7 +19,6 @@ export class ViewService {
   buttonPosition = signal<string>('end');
   isDarkSelected = signal<boolean>(false);
   isFooterVisible = signal<boolean>(true);
-  isLoginPage = signal<boolean>(true);
   headerIcon = signal<string>('person-outline');
   //login = signal<boolean>(false);
   //logoUrl = signal<string>('');

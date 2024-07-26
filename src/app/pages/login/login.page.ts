@@ -4,6 +4,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { IonText } from "@ionic/angular/standalone";
 import { Router } from '@angular/router';
 import { ViewService } from 'src/app/services/viewService.service';
+import { FirebaseService } from 'src/app/services/firebase.service';
+import { User } from 'src/app/models/user.model';
 
 @Component({
   selector: 'app-login',
@@ -18,6 +20,7 @@ export class LoginPage implements OnInit, OnDestroy {
   type = signal<string>('password');
   router = inject(Router);
   viewService = inject(ViewService);
+  firebase = inject(FirebaseService);
 
   
   form = new FormGroup({
@@ -25,15 +28,17 @@ export class LoginPage implements OnInit, OnDestroy {
     password: new FormControl('', [Validators.required]),
   })
 
+  submit(){
+    if(this.form.valid){
+      this.firebase.singIn(this.form.value as User).then(res => console.log(res));
+    }
+  }
+
   hideShow(){
     this.showHidePassword.update(value => value =!value);
 
     if(this.showHidePassword()) this.type.set('password')
       else this.type.set('text')
-  }
-
-  submit(){
-    console.log(this.form.value);
   }
 
   forgotPassword(){
