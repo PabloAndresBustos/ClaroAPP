@@ -23,6 +23,7 @@
     [buttonText]="'Más info'"
     [router]="'moviles'"
     [accordionContentList]="accordionInfo"
+    [style]="'margin: 0 20px 0 20px;'"
     />
 
     <app-accordion 
@@ -31,6 +32,7 @@
     [subtitle]="''"
     [buttonText]="''"
     [accordionContentList]="accordionAnswer"
+    [style]="'margin: 0 20px 0 20px;'"
     />
   }@else {
     @if(page() == 'negocios'){
@@ -38,12 +40,14 @@
       [isModal]="false"
       [title]="'NUESTROS PRODUCTOS'"
       [accordionContentList]="bussinesAcordion"
+      [style]="'margin: 0 20px 0 20px;'"
       />
     }@else{
       <app-accordion 
       [isModal]="false"
       [title]="'NUESTROS PRODUCTOS'"
       [accordionContentList]="companyAcordion"
+      [style]="'margin: 0 20px 0 20px;'"
       />
     }
       <app-cards 
@@ -68,6 +72,7 @@
       [isModal]="false"
       [title]="'Preguntas Frecuentes: '"
       [accordionContentList]="accordionBussinesAnswer"
+      [style]="'margin: 0 20px 0 20px;'"
       />
   }
 </ion-content>

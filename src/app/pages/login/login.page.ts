@@ -1,4 +1,4 @@
-import { Component, HostListener, inject, OnDestroy, OnInit, signal } from '@angular/core';
+import { Component, inject, OnDestroy, OnInit, signal } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { IonText } from "@ionic/angular/standalone";
@@ -42,10 +42,12 @@ export class LoginPage implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.viewService.ChangeAppButton();
+    this.viewService.isLoginPage.set(false);
   }
 
   ngOnDestroy() {
     this.viewService.ChangeAppButton();
+    this.viewService.isLoginPage.set(true);
   }
 
 }

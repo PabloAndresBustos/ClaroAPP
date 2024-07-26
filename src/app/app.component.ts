@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { SharedModule } from './shared/shared.module';
+import { ViewService } from './services/viewService.service';
+
+
 
 @Component({
   selector: 'app-root',
@@ -7,4 +10,11 @@ import { SharedModule } from './shared/shared.module';
   standalone: true,
   imports: [SharedModule],
 })
-export class AppComponent{}
+export class AppComponent implements OnInit{
+
+  viewService = inject(ViewService);
+ 
+  ngOnInit(){
+    this.viewService.isKeyboard();
+  }
+}

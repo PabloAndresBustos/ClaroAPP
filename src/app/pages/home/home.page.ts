@@ -17,7 +17,7 @@ export class HomePage{
   viewService = inject(ViewService);
   alertMessage:string = '';
   currentRouter = inject(Router);
- 
+
   onWillOpen(){
     this.viewService.buttonPosition.set('start')
   }
@@ -48,6 +48,14 @@ export class HomePage{
 
   isDarkSelected(){
     return this.viewService.isDarkSelected();
+  }
+
+  isFooterVisible(){
+    return this.viewService.isFooterVisible();
+  }
+
+  isLoginPage(){
+    return this.viewService.isLoginPage();
   }
   
   pages:Pages[] = [

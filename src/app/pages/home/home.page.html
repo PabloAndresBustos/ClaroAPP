@@ -2,6 +2,7 @@
   [router]="'/login'"
 />
 <ion-content class="content">
+  @if(isFooterVisible() && isLoginPage()){
     <ion-fab slot="fixed" vertical="bottom" [horizontal]="buttonPosition()">
       <ion-fab-button>
         <ion-icon name="chevron-up-circle"></ion-icon>
@@ -17,6 +18,7 @@
         }
       </ion-fab-list>
     </ion-fab>
+  }
     <ion-menu 
       contentId="menu-end" 
       menuId="menu-end" 
@@ -116,4 +118,8 @@
     </ion-menu>
     <ion-router-outlet id="menu-end" main></ion-router-outlet>
 </ion-content>
-<app-footer />
+@if (isFooterVisible()) {
+  <app-footer />
+}
+
+<!-- Cambio del if por hidden -->

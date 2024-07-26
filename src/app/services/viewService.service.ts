@@ -1,4 +1,6 @@
 import { Injectable, signal } from '@angular/core';
+import { Capacitor } from '@capacitor/core';
+import { Keyboard } from '@capacitor/keyboard';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +17,9 @@ export class ViewService {
   loginRecovery = signal<boolean>(false);
   buttonPosition = signal<string>('end');
   isDarkSelected = signal<boolean>(false);
-  headerIcon = signal<string>('person-outline'); 
+  isFooterVisible = signal<boolean>(true);
+  isLoginPage = signal<boolean>(true);
+  headerIcon = signal<string>('person-outline');
   //login = signal<boolean>(false);
   //logoUrl = signal<string>('');
   
@@ -25,8 +29,8 @@ export class ViewService {
   }
 
   ChangeAppButton(){
-    this.loginRecovery.update(value => value = !value)
-    this.headerButton.update(value => value = !value)
+    this.loginRecovery.update(value => value = !value);
+    this.headerButton.update(value => value = !value);
   }
 
   /* Seleccion de Theme */
@@ -41,9 +45,7 @@ export class ViewService {
 
   toggleChange(event: any) {
     this.themeStatus(event.detail.checked);
-    console.log(this.isDarkSelected())
     this.isDarkSelected.update(value => value = !value);
-    console.log(this.isDarkSelected())
   }
 
   chageTheme() {
@@ -54,4 +56,17 @@ export class ViewService {
     });
   }
   /* fin de seleccion de Theme */
+
+  /* Cuando el teclado es visiible el footer no */
+
+  isKeyboard(){
+    if(Capacitor.isNativePlatform()){
+      Keyboard.addListener('keyboardWillShow', () => this.isFooterVisible.set(false));
+      Keyboard.addListener('keyboardDidShow', () => this.isFooterVisible.set(false));
+      Keyboard.addListener('keyboardWillHide', () => this.isFooterVisible.set(true));
+      Keyboard.addListener('keyboardDidHide', () => this.isFooterVisible.set(true));
+    }
+  }
+
+  /* Fin de cambio de vista con el footer */
 }

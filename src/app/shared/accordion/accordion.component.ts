@@ -59,6 +59,7 @@ export class AccordionComponent{
   isModal = input<boolean>(false);
   titleColor = input<string>('primary');
   accordionContentList = input<Accordion[]>();
+  style = input<string>('');
     
   
   cancel(){
