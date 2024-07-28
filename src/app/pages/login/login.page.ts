@@ -28,9 +28,19 @@ export class LoginPage implements OnInit, OnDestroy {
     password: new FormControl('', [Validators.required]),
   })
 
-  submit(){
+  async submit(){
     if(this.form.valid){
-      this.firebase.singIn(this.form.value as User).then(res => console.log(res));
+      
+      const loading = await this.viewService.loading();
+      await loading.present();
+
+      this.firebase.singIn(this.form.value as User).then(
+        res => console.log(res)
+      ).catch(
+        err => console.log(err)
+      ).finally(
+        () => loading.dismiss()
+      )
     }
   }
 

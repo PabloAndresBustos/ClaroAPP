@@ -18,7 +18,6 @@ if (environment.production) {
 register();
 
 
-
 bootstrapApplication(AppComponent, {
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },

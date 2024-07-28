@@ -1,11 +1,14 @@
-import { Injectable, signal } from '@angular/core';
+import { inject, Injectable, signal } from '@angular/core';
 import { Capacitor } from '@capacitor/core';
 import { Keyboard } from '@capacitor/keyboard';
+import { LoadingController } from '@ionic/angular/standalone';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ViewService {
+
+  loadingCtrl = inject(LoadingController);
 
   selectedTheme = false;
   page = signal<string>('');
@@ -69,4 +72,10 @@ export class ViewService {
   }
 
   /* Fin de cambio de vista con el footer */
+
+  /* Spinner Loadin */
+  loading(){
+    return this.loadingCtrl.create({spinner: 'bubbles'});
+  }
+  /* Fin Spinner Loading */
 }
