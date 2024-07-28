@@ -35,23 +35,25 @@ export class LoginPage implements OnInit, OnDestroy {
       await loading.present();
 
       this.firebase.singIn(this.form.value as User).then(
-        res => console.log(res)
+        res => {
+          console.log(res)
+          this.router.navigateByUrl('/mi-claro');
+        }
       ).catch(
         err => {
           console.log(err)
           this.viewService.toastAlert({
-            message: err.message,
+            message: 'Error de usuario o contraseña, verifica tus credenciales',
             duration: 1500,
             icon: 'alert-cicle-outline',
             color: 'primary',
             position: 'middle',
           })
+          this.router.navigateByUrl('home/login');
         }
-     
       ).finally(
         () => {
           loading.dismiss()
-          this.router.navigateByUrl('/mi-claro');
         }
       )
     }
