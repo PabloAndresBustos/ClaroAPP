@@ -39,7 +39,10 @@ export class LoginPage implements OnInit, OnDestroy {
       ).catch(
         err => console.log(err)
       ).finally(
-        () => loading.dismiss()
+        () => {
+          loading.dismiss()
+          this.router.navigateByUrl('/');
+        }
       )
     }
   }
