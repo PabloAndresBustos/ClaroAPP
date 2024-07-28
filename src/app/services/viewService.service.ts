@@ -1,7 +1,7 @@
 import { inject, Injectable, signal } from '@angular/core';
 import { Capacitor } from '@capacitor/core';
 import { Keyboard } from '@capacitor/keyboard';
-import { LoadingController } from '@ionic/angular/standalone';
+import { LoadingController, ToastController, ToastOptions } from '@ionic/angular/standalone';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +9,7 @@ import { LoadingController } from '@ionic/angular/standalone';
 export class ViewService {
 
   loadingCtrl = inject(LoadingController);
+  toastCtrl = inject(ToastController);
 
   selectedTheme = false;
   page = signal<string>('');
@@ -78,4 +79,11 @@ export class ViewService {
     return this.loadingCtrl.create({spinner: 'bubbles'});
   }
   /* Fin Spinner Loading */
+
+  /* Toast Alerts */
+  async toastAlert(opts?: ToastOptions){
+    const toast = await this.toastCtrl.create(opts);
+    toast.present();
+  }
+  /* Fin de Toast Alerts */
 }

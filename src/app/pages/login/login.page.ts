@@ -37,11 +37,21 @@ export class LoginPage implements OnInit, OnDestroy {
       this.firebase.singIn(this.form.value as User).then(
         res => console.log(res)
       ).catch(
-        err => console.log(err)
+        err => {
+          console.log(err)
+          this.viewService.toastAlert({
+            message: err.message,
+            duration: 1500,
+            icon: 'alert-cicle-outline',
+            color: 'primary',
+            position: 'middle',
+          })
+        }
+     
       ).finally(
         () => {
           loading.dismiss()
-          this.router.navigateByUrl('/');
+          this.router.navigateByUrl('/mi-claro');
         }
       )
     }
