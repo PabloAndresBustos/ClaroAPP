@@ -37,7 +37,6 @@ export class LoginPage implements OnInit, OnDestroy {
       this.firebase.singIn(this.form.value as User).then(
         res => {
           console.log(res)
-          this.ngOnDestroy();
           this.router.navigateByUrl('/mi-claro');
         }
       ).catch(
@@ -50,7 +49,6 @@ export class LoginPage implements OnInit, OnDestroy {
             color: 'primary',
             position: 'middle',
           })
-          this.ngOnDestroy();
           this.router.navigateByUrl('home/login');
         }
       ).finally(
