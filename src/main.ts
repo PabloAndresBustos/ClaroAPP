@@ -1,5 +1,5 @@
 import { routes } from './app/app.routes';
-import { enableProdMode, importProvidersFrom } from '@angular/core';
+import { enableProdMode } from '@angular/core';
 import { register } from 'swiper/element/bundle';
 import { AppComponent } from './app/app.component';
 import { environment } from './environments/environment';
@@ -10,13 +10,6 @@ import { RouteReuseStrategy, provideRouter, withPreloading, PreloadAllModules } 
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
-
-if (environment.production) {
-  enableProdMode();
-}
-
-register();
-
 
 bootstrapApplication(AppComponent, {
   providers: [
@@ -42,3 +35,10 @@ bootstrapApplication(AppComponent, {
       ),
   ],
 });
+
+if (environment.production) {
+  enableProdMode();
+}
+
+register();
+

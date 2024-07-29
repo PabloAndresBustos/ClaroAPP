@@ -1,4 +1,6 @@
-import { Component, input, OnInit } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { AlertController } from '@ionic/angular';
 import { 
         IonCard, 
         IonContent, 
@@ -10,6 +12,7 @@ import {
         IonInput, 
         IonTitle,
       } from '@ionic/angular/standalone';
+import { ViewService } from 'src/app/services/viewService.service';
 
 @Component({
   selector: 'app-cards',
@@ -17,8 +20,8 @@ import {
   templateUrl: './cards.component.html',
   styleUrls: ['./cards.component.scss'],
   imports:[
-            
-    IonContent, 
+            ReactiveFormsModule,
+            IonContent, 
             IonCard, 
             IonCardHeader, 
             IonCardTitle, 
@@ -30,6 +33,8 @@ import {
 })
 export class CardsComponent{
 
+  viewService = inject(ViewService);
+
   imageUrl = input<string>();
   title = input.required<string>();
   showInput = input<boolean>(false);
@@ -40,4 +45,24 @@ export class CardsComponent{
   inputText = input.required<boolean>();
   contentTitle = input.required<string>();
 
+  form = new FormGroup({
+    number: new FormControl('', [Validators.maxLength(10)])
+  })
+
+  async submit(){
+    if(this.form.valid){
+      /* Esto es decorativo */
+      const loading = await this.viewService.loading();
+      loading.present();
+      setTimeout(() => {
+        loading.dismiss();
+        this.viewService.toastAlert({
+          message: 'EN BREVE NOS CONTACTAREMOS',
+          duration: 2500,
+          color: 'primary',
+          position: 'middle'
+        })
+      }, 2500)
+    }
+  }
 }

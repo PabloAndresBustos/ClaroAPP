@@ -17,7 +17,6 @@ export class AppComponent implements OnInit{
 
   viewService = inject(ViewService);
   
- 
   ngOnInit(){
     this.viewService.isKeyboard();
     initializeApp(environment.firebaseConfig)

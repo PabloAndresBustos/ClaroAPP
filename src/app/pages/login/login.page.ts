@@ -48,6 +48,8 @@ export class LoginPage implements OnInit, OnDestroy {
             icon: 'alert-cicle-outline',
             color: 'primary',
             position: 'middle',
+            layout: 'stacked',
+            cssClass: 'toast'
           })
           this.router.navigateByUrl('home/login');
         }
@@ -68,6 +70,10 @@ export class LoginPage implements OnInit, OnDestroy {
 
   forgotPassword(){
     this.router.navigateByUrl('home/forgot-password');
+  }
+
+  singUp(){
+    this.router.navigateByUrl('home/sing-up');
   }
 
   ngOnInit() {

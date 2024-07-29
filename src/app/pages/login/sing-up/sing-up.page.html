@@ -56,22 +56,38 @@
         }
       </div>
     }
-    <p class="ion-text-end" (click)="forgotPassword()">Recuperar contraseña</p>
+    <ion-item lines="none" style="margin: 20px 0 20px 0;">
+      <ion-icon slot="start" name="call-outline" color="primary"></ion-icon>
+      <ion-input 
+      type="number" 
+      label="Número"
+      labelPlacement="floating"
+      [formControl]="form.controls.number"
+      />
+      <ion-button slot="end" fill="clear" shape="round">
+        <ion-icon 
+        slot="start"  
+        style="font-size: 25px;" 
+        color="primary"
+        />
+      </ion-button>
+    </ion-item>
+    @if (form.controls.number.errors && form.controls.number.touched) {
+      <div>
+        @if (form.controls.number.errors?.['required']) {
+          <ion-text color="primary" class="ion-text-center">
+            <h5>El numero de teléfono es requerido</h5>
+          </ion-text>
+        }
+      </div>
+    }
     <ion-button 
     expand="block" 
     type="submit" 
     [disabled]="form.invalid" 
     style="width: 60%; margin: 0 auto;">
-      <ion-icon slot="start" name="log-in-outline"></ion-icon>
-      Ingresar
-    </ion-button>
-    <ion-button 
-    expand="block"
-    fill="outline" 
-    style="width: 60%; margin: 0 auto; margin-top: 20px;"
-    (click)="singUp()">
       <ion-icon slot="start" name="person-add-outline"></ion-icon>
-      Registrate
+      Registrarme
     </ion-button>
   </form>
 </ion-content>
