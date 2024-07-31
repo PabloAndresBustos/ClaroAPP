@@ -35,7 +35,10 @@ import {
         IonInput,
         IonGrid,
         IonAccordionGroup,
-        IonAccordion} from '@ionic/angular/standalone';
+        IonAccordion,
+        IonCardSubtitle,
+        IonCardTitle,
+        IonModal} from '@ionic/angular/standalone';
 
 
 
@@ -56,6 +59,7 @@ import {
     FormsModule,
     IonApp,
     IonRouterOutlet,
+    IonModal,
     IonList,
     IonInput,
     IonGrid,
@@ -65,6 +69,8 @@ import {
     IonTitle,
     IonToolbar,
     IonCard,
+    IonCardTitle,
+    IonCardSubtitle,
     IonFab,
     IonFabButton,
     IonFabList,
@@ -98,6 +104,7 @@ import {
     FormsModule,
     IonApp,
     IonRouterOutlet,
+    IonModal,
     IonList,
     IonInput,
     IonGrid,
@@ -107,6 +114,8 @@ import {
     IonTitle,
     IonToolbar,
     IonCard,
+    IonCardTitle,
+    IonCardSubtitle,
     IonFab,
     IonFabButton,
     IonFabList,

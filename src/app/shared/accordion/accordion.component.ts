@@ -1,7 +1,7 @@
 import { RouterLink } from '@angular/router';
 import { ModalComponent } from '../modal/modal.component';
 import { Accordion } from 'src/app/models/accordion.models';
-import { Component, input, OnInit, ViewChild } from '@angular/core';
+import { Component, input, ViewChild } from '@angular/core';
 import { 
         IonContent, 
         IonCardTitle, 
@@ -16,8 +16,6 @@ import {
         IonToolbar, 
         IonFooter, 
         IonIcon } from '@ionic/angular/standalone';
-import { SharedModule } from "../shared.module";
-import { Items } from 'src/app/models/items.models';
 import { ItemsComponent } from '../items/items.component';
 
 
