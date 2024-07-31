@@ -22,7 +22,7 @@
                       <strong>El número debe tener 10 caractéres</strong>
                     </p>
                   }
-                  @if (form.controls.number.touched) {
+                  @if (form.controls.number.errors?.['required']) {
                     <p color="primary" class="ion-text-center">
                       <strong>El número es requerido</strong>
                     </p>
