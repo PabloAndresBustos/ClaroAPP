@@ -1,4 +1,4 @@
-import { Component, inject, input } from '@angular/core';
+import { Component, inject, input, signal } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AlertController } from '@ionic/angular';
 import { 
@@ -44,9 +44,10 @@ export class CardsComponent{
   buttonText = input.required<string>();
   inputText = input.required<boolean>();
   contentTitle = input.required<string>();
+  
 
   form = new FormGroup({
-    number: new FormControl('', [Validators.maxLength(10)])
+    number: new FormControl('', [Validators.required, Validators.maxLength(10), Validators.minLength(10)])
   })
 
   async submit(){
@@ -63,6 +64,14 @@ export class CardsComponent{
           position: 'middle'
         })
       }, 2500)
+    }
+  }
+
+  enableButton(){
+    if(this.inputText()){
+      return this.form.invalid 
+    } else {
+      return this.form.valid
     }
   }
 }

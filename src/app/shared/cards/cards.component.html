@@ -11,13 +11,22 @@
               <ion-input 
               [label]="inputPlaceholder()" 
               label-placement="floating" 
-              [formControl]="form.controls.number">
+              [formControl]="form.controls.number"
+              fill="outline"
+              >
             </ion-input>
-              @if (form.controls.number.errors){
+              @if (form.controls.number.errors && form.controls.number.touched){
                 <div>
-                  <p color="primary" class="ion-text-center">
-                    <strong>Máximo 10 caractéres</strong>
-                  </p>
+                  @if (form.controls.number.errors?.['maxlength'] || form.controls.number.errors?.['minlength']) {
+                    <p color="primary" class="ion-text-center">
+                      <strong>El número debe tener 10 caractéres</strong>
+                    </p>
+                  }
+                  @if (form.controls.number.touched) {
+                    <p color="primary" class="ion-text-center">
+                      <strong>El número es requerido</strong>
+                    </p>
+                  }
                 </div>
               }
             }
@@ -28,7 +37,9 @@
             expand="block" 
             shape="round" 
             color="primary"
-            type="submit">
+            type="submit"
+            [disabled]="enableButton()"
+            >
               {{buttonText()}}
             </ion-button>
         </form>
