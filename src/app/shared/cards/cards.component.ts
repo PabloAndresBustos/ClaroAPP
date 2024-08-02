@@ -45,7 +45,6 @@ export class CardsComponent{
   inputText = input.required<boolean>();
   contentTitle = input.required<string>();
   
-
   form = new FormGroup({
     number: new FormControl('', [Validators.required, Validators.maxLength(10), Validators.minLength(10)])
   })
@@ -66,7 +65,7 @@ export class CardsComponent{
       }, 2500)
     }
   }
-
+  
   enableButton(){
     if(this.inputText()){
       return this.form.invalid 

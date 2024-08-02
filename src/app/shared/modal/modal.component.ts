@@ -5,8 +5,9 @@ import { ViewService } from 'src/app/services/viewService.service';
 import { 
         Component, 
         inject, 
-        input, 
-        OnInit, 
+        input,
+        OnDestroy,
+        OnInit,
         ViewChild } from '@angular/core';
 import { 
          IonModal, 
@@ -29,7 +30,8 @@ import {
          IonRouterOutlet, 
          IonTitle, 
          IonInput, 
-         IonHeader, IonText } from "@ionic/angular/standalone";
+         IonHeader, 
+         IonText} from "@ionic/angular/standalone";
 
 
 @Component({
@@ -63,13 +65,16 @@ import {
             ReactiveFormsModule
             ]
 })
+
+
 export class ModalComponent{
 
   @ViewChild(IonModal) modal!:IonModal;
 
-  viewService = inject(ViewService);
   router = inject(Router);
-    
+  viewService = inject(ViewService);
+  //modalCtrl = inject(ModalController);
+      
   icon = input<boolean>(true);
   modalTrigger = input<string>();
   titleContent = input<string>();
@@ -81,6 +86,7 @@ export class ModalComponent{
 
   cancel(){
     this.modal.dismiss();
+    this.viewService.headerButton.update((value) => !value);
   }
   
   changeTitle(title:string){

@@ -1,6 +1,6 @@
 import { Images } from 'src/app/models/images.models';
 import { ModalComponent } from '../modal/modal.component';
-import { Component, CUSTOM_ELEMENTS_SCHEMA, input, OnInit } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, inject, input, OnInit } from '@angular/core';
 import { 
         IonCardTitle, 
         IonButton, 
@@ -11,7 +11,9 @@ import {
         IonToolbar, 
         IonContent, 
         IonTitle, 
-        IonItem } from "@ionic/angular/standalone";
+        IonItem, 
+        ModalController} from "@ionic/angular/standalone";
+import { ViewService } from 'src/app/services/viewService.service';
 
 @Component({
   selector: 'app-carrousel',
@@ -35,10 +37,21 @@ import {
 })
 export class CarrouselComponent{
 
+  modalCtrl = inject(ModalController);
+  viewService = inject(ViewService);
+
   openModal = input<string>();
   titleContent = input<string>();
   contentList = input<string[]>();
   subTitleContent = input<string>();
   imageList = input.required<Images[]>();
+
+  changeHeaderButton(){
+    this.viewService.headerButton.update((value) => !value)
+  }
+
+  ionViewWillEnter(){
+    this.modalCtrl.dismiss().then( () => console.log('chau'))
+  }
 
 }

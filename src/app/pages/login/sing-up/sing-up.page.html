@@ -59,10 +59,10 @@
     <ion-item lines="none" style="margin: 20px 0 20px 0;">
       <ion-icon slot="start" name="call-outline" color="primary"></ion-icon>
       <ion-input 
-      type="number" 
-      label="Número"
+      type="text" 
+      label="Nombre"
       labelPlacement="floating"
-      [formControl]="form.controls.number"
+      [formControl]="form.controls.name"
       />
       <ion-button slot="end" fill="clear" shape="round">
         <ion-icon 
@@ -72,11 +72,11 @@
         />
       </ion-button>
     </ion-item>
-    @if (form.controls.number.errors && form.controls.number.touched) {
+    @if (form.controls.name.errors && form.controls.name.touched) {
       <div>
-        @if (form.controls.number.errors?.['required']) {
+        @if (form.controls.name.errors?.['required']) {
           <ion-text color="primary" class="ion-text-center">
-            <h5>El numero de teléfono es requerido</h5>
+            <h5>El nombre de usuario es requerido</h5>
           </ion-text>
         }
       </div>

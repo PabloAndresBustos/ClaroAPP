@@ -1,6 +1,10 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { IonText } from '@ionic/angular/standalone';
+import { User } from 'src/app/models/user.model';
+import { FirebaseService } from 'src/app/services/firebase.service';
+import { ViewService } from 'src/app/services/viewService.service';
 import { SharedModule } from 'src/app/shared/shared.module';
 
 @Component({
@@ -12,13 +16,17 @@ import { SharedModule } from 'src/app/shared/shared.module';
 })
 export class SingUpPage{
 
+  viewService = inject(ViewService);
+  firebase = inject(FirebaseService);
+  router = inject(Router);
+
   showHidePassword = signal<boolean>(true);
   type = signal<string>('password');
 
   form = new FormGroup({
     email: new FormControl('', [Validators.email, Validators.required]),
     password: new FormControl('', [Validators.required]),
-    number: new FormControl('', [Validators.required, Validators.maxLength(10)])
+    name: new FormControl('', [Validators.required])
   })
 
   hideShow(){
@@ -28,8 +36,41 @@ export class SingUpPage{
       else this.type.set('text')
   }
 
-  submit(){
-    console.log('test')
+  async submit(){
+
+    if(this.form.valid){
+      const loading = await this.viewService.loading();
+      loading.present();
+                  
+      this.firebase.singUp(this.form.value as User).then( 
+
+        async res => {
+          await this.firebase.updateUser(this.form.value.name);
+          console.log(res);
+          this.viewService.userName.set(res.user.displayName);
+        }
+
+      ).catch(err => {
+
+        this.viewService.toastAlert({
+          message: 'Verifica tus credenciales',
+          duration: 1500,
+          icon: 'alert-cicle-outline',
+          color: 'primary',
+          position: 'middle',
+          layout: 'stacked',
+          cssClass: 'toast'
+        })
+
+      }).finally(()=>{
+
+        loading.dismiss();
+        this.router.navigateByUrl('/');
+
+      })
+  
+    }
+
   }
 
 }

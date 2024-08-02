@@ -37,11 +37,11 @@ export class LoginPage implements OnInit, OnDestroy {
       this.firebase.singIn(this.form.value as User).then(
         res => {
           console.log(res)
+          this.viewService.userName.set(res.user.displayName);
           this.router.navigateByUrl('/mi-claro');
         }
       ).catch(
         err => {
-          console.log(err)
           this.viewService.toastAlert({
             message: 'Error de usuario o contraseña, verifica tus credenciales',
             duration: 1500,

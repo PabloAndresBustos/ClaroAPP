@@ -1,7 +1,7 @@
 import { RouterLink } from '@angular/router';
 import { ModalComponent } from '../modal/modal.component';
 import { Accordion } from 'src/app/models/accordion.models';
-import { Component, input, ViewChild } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { 
         IonContent, 
         IonCardTitle, 
@@ -15,8 +15,9 @@ import {
         IonTitle, 
         IonToolbar, 
         IonFooter, 
-        IonIcon } from '@ionic/angular/standalone';
+        IonIcon} from '@ionic/angular/standalone';
 import { ItemsComponent } from '../items/items.component';
+import { ViewService } from 'src/app/services/viewService.service';
 
 
 @Component({
@@ -43,10 +44,9 @@ import { ItemsComponent } from '../items/items.component';
   ]
 })
 export class AccordionComponent{
-
-  
-  @ViewChild(IonModal) modal!:IonModal;
-
+    
+  viewService = inject(ViewService);
+      
   link = input<string>();
   color = input<string>();
   title = input<string>();
@@ -58,9 +58,8 @@ export class AccordionComponent{
   titleColor = input<string>('primary');
   accordionContentList = input<Accordion[]>();
   style = input<string>('');
-    
   
-  cancel(){
-    this.modal.dismiss();
+  changeHeaderButton(){
+    this.viewService.headerButton.update((value) => !value)
   }
 }
