@@ -24,6 +24,7 @@ export class SingUpPage{
   type = signal<string>('password');
 
   form = new FormGroup({
+    uid: new FormControl(''),
     email: new FormControl('', [Validators.email, Validators.required]),
     password: new FormControl('', [Validators.required]),
     name: new FormControl('', [Validators.required])
@@ -46,7 +47,9 @@ export class SingUpPage{
 
         async res => {
           await this.firebase.updateUser(this.form.value.name);
-          console.log(res);
+          let userId = res.user.uid;
+          this.form.controls.uid.setValue(userId);
+          this.addUserData(userId);
           this.viewService.userName.set(res.user.displayName);
         }
 
@@ -58,19 +61,46 @@ export class SingUpPage{
           icon: 'alert-cicle-outline',
           color: 'primary',
           position: 'middle',
-          layout: 'stacked',
-          cssClass: 'toast'
+          layout: 'stacked'
         })
 
       }).finally(()=>{
 
         loading.dismiss();
-        this.router.navigateByUrl('/');
-
+      
       })
   
     }
 
+  }
+
+  async addUserData(uid:string){
+    if(this.form.valid){
+
+      let path = `users/${uid}`;
+      delete this.form.value.password;
+
+      this.firebase.addDocument(path, this.form.value).then(async res => {
+        this.firebase.saveLocalStorage('user', this.form.value);
+        this.router.navigateByUrl('/mi-claro');
+
+      }).catch(err => {
+
+        this.viewService.toastAlert({
+          message: 'Registro completado correctamente',
+          duration: 1500,
+          icon: 'alert-cicle-outline',
+          color: 'primary',
+          position: 'middle',
+          layout: 'stacked'
+        })
+
+      }).finally(() => {
+
+        this.form.reset();
+
+      })
+    }
   }
 
 }

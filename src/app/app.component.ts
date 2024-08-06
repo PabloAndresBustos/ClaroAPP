@@ -5,8 +5,6 @@ import { initializeApp } from 'firebase/app';
 import { environment } from 'src/environments/environment';
 
 
-
-
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -19,6 +17,6 @@ export class AppComponent implements OnInit{
   
   ngOnInit(){
     this.viewService.isKeyboard();
-    initializeApp(environment.firebaseConfig)
+    initializeApp(environment.firebaseConfig);
   }
 }
